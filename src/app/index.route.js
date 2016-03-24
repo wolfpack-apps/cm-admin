@@ -21,13 +21,6 @@
           "CurrentAuth": ["Auth", function(Auth) {
             // $requireAuth returns a promise so the resolve waits for it to complete
             return Auth.$requireAuth();
-          }],
-          "API_KEY": ["FIREBASE_URL", "$firebaseObject", function (FIREBASE_URL, $firebaseObject) {
-            var itemsRef = new Firebase(FIREBASE_URL + "/edmunds_key");
-            var obj = $firebaseObject(itemsRef);
-
-            return obj.$loaded();
-
           }]
         },
         url: '/+',
