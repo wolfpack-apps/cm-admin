@@ -28,6 +28,12 @@
         controller: 'AccountController',
         controllerAs: 'AccountCtrl',
         abstract: true
+      })
+      .state('li.payments', {
+        url: '/payments',
+        templateUrl: 'app/payments/tmpl.index.html',
+        controller: 'PaymentIndexController',
+        controllerAs: 'PaymentsCtrl'
       });
 
     $urlRouterProvider.otherwise('/');
