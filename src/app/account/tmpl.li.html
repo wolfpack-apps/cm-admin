@@ -1,7 +1,12 @@
 <div layout="row" flex>
-  <md-sidenav class="md-sidenav-right" md-component-id="right" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop md-whiteframe="4">
+  <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-md')" md-disable-backdrop md-whiteframe="4">
     <md-toolbar>
-      <h1 class="md-toolbar-tools">Vardar Soccer</h1>
+      <div class="md-toolbar-tools">
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="AccountCtrl.toggleSidenav()" hide-gt-md>
+          <md-icon>menu</md-icon>
+        </md-button>
+        <h1>Vardar Soccer</h1>
+      </div>
     </md-toolbar>
     <md-content>
       <md-list flex>
@@ -15,15 +20,18 @@
         <md-list-item ng-click="$state.go('login')">
           <p>Create New Invoice</p>
         </md-list-item>
-        <md-subheader class="md-no-sticky" md-theme="white-bg">Team:</md-subheader>
+        <md-subheader class="md-no-sticky" md-theme="white-bg">Teams:</md-subheader>
         <md-list-item ng-click="$state.go('login')">
           <p>My Teams</p>
+        </md-list-item>
+        <md-list-item ng-click="$state.go('login')">
+          <p>My Coaches</p>
         </md-list-item>
         <md-list-item ng-click="$state.go('login')">
           <p>Create New Team</p>
         </md-list-item>
         <md-subheader class="md-no-sticky" md-theme="white-bg">Account:</md-subheader>
-        <md-list-item ng-click="$state.go('login')">
+        <md-list-item ng-click="$state.go('li.account')">
           <p>My Account</p>
         </md-list-item>
       </md-list>
@@ -32,7 +40,7 @@
   <div layout="column" flex md-theme="green" id="content">
     <md-toolbar layout="row">
       <div class="md-toolbar-tools">
-        <md-button class="md-icon-button" aria-label="Settings" hide-gt-md>
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="AccountCtrl.toggleSidenav()" hide-gt-md>
           <md-icon>menu</md-icon>
         </md-button>
         <!-- Add a toggleMenu function to your menuCtrl controller with the following in it
@@ -44,6 +52,9 @@
         </md-button>
         <md-button class="md-icon-button" aria-label="Settings">
           <md-icon>message</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="$state.go('li.account')">
+          <md-icon>settings</md-icon>
         </md-button>
       </div>
     </md-toolbar>

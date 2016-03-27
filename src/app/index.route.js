@@ -29,6 +29,15 @@
         controllerAs: 'AccountCtrl',
         abstract: true
       })
+      .state('li.account', {
+        url: '/account',
+        templateUrl: 'app/account/tmpl.edit.html',
+        controller: 'AccountEditController',
+        controllerAs: 'AccountCtrl',
+        data: {
+          title: "My Account"
+        }
+      })
       .state('li.payments', {
         url: '/payments',
         templateUrl: 'app/payments/tmpl.index.html',

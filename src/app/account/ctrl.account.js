@@ -10,10 +10,6 @@
 
     var vm = this;
     vm.me = CurrentAuth;
-    vm.data = $state.current.data;
-    vm.go = function (to, params, options) {
-      $state.go(to, params, options);
-    }
 
     /*
      * Functions
@@ -28,7 +24,7 @@
     }
 
     vm.toggleSidenav = function () {
-      $mdSidenav('settings').toggle();
+      $mdSidenav('left').toggle();
     }
 
   }
