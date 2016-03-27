@@ -5,7 +5,7 @@
         <md-button class="md-icon-button" aria-label="Settings" ng-click="AccountCtrl.toggleSidenav()" hide-gt-md>
           <md-icon>menu</md-icon>
         </md-button>
-        <h1>Vardar Soccer</h1>        
+        <h1>Vardar Soccer</h1>
       </div>
     </md-toolbar>
     <md-content>
@@ -31,7 +31,7 @@
           <p>Create New Team</p>
         </md-list-item>
         <md-subheader class="md-no-sticky" md-theme="white-bg">Account:</md-subheader>
-        <md-list-item ng-click="$state.go('login')">
+        <md-list-item ng-click="$state.go('li.account')">
           <p>My Account</p>
         </md-list-item>
       </md-list>
@@ -53,7 +53,7 @@
         <md-button class="md-icon-button" aria-label="Settings">
           <md-icon>message</md-icon>
         </md-button>
-        <md-button class="md-icon-button" aria-label="Settings">
+        <md-button class="md-icon-button" aria-label="Settings" ng-click="$state.go('li.account')">
           <md-icon>settings</md-icon>
         </md-button>
       </div>

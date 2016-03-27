@@ -33,7 +33,10 @@
         url: '/account',
         templateUrl: 'app/account/tmpl.edit.html',
         controller: 'AccountEditController',
-        controllerAs: 'AccountCtrl'
+        controllerAs: 'AccountCtrl',
+        data: {
+          title: "My Account"
+        }
       })
       .state('li.payments', {
         url: '/payments',
