@@ -5,7 +5,7 @@
     </md-toolbar>
     <md-content>
       <md-list flex>
-        <md-subheader class="md-no-sticky">Payments:</md-subheader>
+        <md-subheader class="md-no-sticky" md-theme="white-bg">Payments:</md-subheader>
         <md-list-item ng-click="$state.go('li.payments')">
           <p>My Payments</p>
         </md-list-item>
@@ -15,14 +15,14 @@
         <md-list-item ng-click="$state.go('login')">
           <p>Create New Invoice</p>
         </md-list-item>
-        <md-subheader class="md-no-sticky">Team:</md-subheader>
+        <md-subheader class="md-no-sticky" md-theme="white-bg">Team:</md-subheader>
         <md-list-item ng-click="$state.go('login')">
           <p>My Teams</p>
         </md-list-item>
         <md-list-item ng-click="$state.go('login')">
           <p>Create New Team</p>
         </md-list-item>
-        <md-subheader class="md-no-sticky">Account:</md-subheader>
+        <md-subheader class="md-no-sticky" md-theme="white-bg">Account:</md-subheader>
         <md-list-item ng-click="$state.go('login')">
           <p>My Account</p>
         </md-list-item>
@@ -37,7 +37,7 @@
         </md-button>
         <!-- Add a toggleMenu function to your menuCtrl controller with the following in it
           $mdSidenav('left').toggle(); -->
-        <h1 flex class="md-toolbar-tools">Club Manager</h1>
+        <h1 flex class="md-toolbar-tools">Club Manager{{ ' » ' + $state.current.data.title }}</h1>
       </div>
     </md-toolbar>
     <md-content ui-view layout="column" flex></md-content>

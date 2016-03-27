@@ -24,11 +24,13 @@
     // theming
     $mdThemingProvider.theme('default')
       .primaryPalette('red')
-      .backgroundPalette('grey');
+      .accentPalette('indigo');
 
 
     $mdThemingProvider.theme('white-bg', 'default')
-      .backgroundPalette('blue-grey');
+      .backgroundPalette('blue-grey', {
+        "default": "50"
+      });
 
     $mdThemingProvider.theme('indigo-bg', 'default')
       .backgroundPalette('indigo');

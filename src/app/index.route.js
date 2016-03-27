@@ -33,7 +33,10 @@
         url: '/payments',
         templateUrl: 'app/payments/tmpl.index.html',
         controller: 'PaymentIndexController',
-        controllerAs: 'PaymentsCtrl'
+        controllerAs: 'PaymentsCtrl',
+        data: {
+          title: "My Payments"
+        }
       });
 
     $urlRouterProvider.otherwise('/');
