@@ -38,6 +38,13 @@
         <!-- Add a toggleMenu function to your menuCtrl controller with the following in it
           $mdSidenav('left').toggle(); -->
         <h1 flex class="md-toolbar-tools">Club Manager{{ ' » ' + $state.current.data.title }}</h1>
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon>notifications</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon>message</md-icon>
+        </md-button>
       </div>
     </md-toolbar>
     <md-content ui-view layout="column" flex></md-content>
