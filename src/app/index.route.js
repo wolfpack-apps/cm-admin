@@ -35,7 +35,7 @@
         controller: 'AccountEditController',
         controllerAs: 'AccountCtrl',
         data: {
-          title: "My Account"
+          title: "Your account"
         }
       })
       .state('li.payments', {
@@ -44,7 +44,16 @@
         controller: 'PaymentIndexController',
         controllerAs: 'PaymentsCtrl',
         data: {
-          title: "My Payments"
+          title: "Your payments"
+        }
+      })
+      .state('li.teams', {
+        url: '/teams',
+        templateUrl: 'app/teams/tmpl.index.html',
+        controller: 'TeamIndexController',
+        controllerAs: 'TeamIndexCtrl',
+        data: {
+          title: "Your teams"
         }
       });
 
