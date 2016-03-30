@@ -38,7 +38,7 @@
         controller: 'AccountEditController',
         controllerAs: 'AccountCtrl',
         data: {
-          title: "Your account"
+          title: 'Your account'
         }
       })
       .state('li.payments', {
@@ -47,7 +47,7 @@
         controller: 'PaymentIndexController',
         controllerAs: 'PaymentsCtrl',
         data: {
-          title: "Your payments"
+          title: 'Your payments'
         }
       })
       .state('li.teams', {
@@ -56,7 +56,16 @@
         controller: 'TeamIndexController',
         controllerAs: 'TeamIndexCtrl',
         data: {
-          title: "Your teams"
+          title: 'Your teams'
+        }
+      })
+      .state('li.teams.detail', {
+        url: '/teams/:id',
+        templateUrl: 'app/teams/tmpl.detail.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail'
         }
       });
 
