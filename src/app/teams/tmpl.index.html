@@ -10,8 +10,8 @@
         <p class="md-body-1">
           Use the settings below to sort and filter by specific parameters.
         </p>
-        <div layout="row">
-          <div flex="95">
+        <div layout="row" class="margin-top-60">
+          <div flex="90">
             <fieldset class="standard">
               <legend> Sort teams </legend>
               <div layout="row" layout-wrap layout-gt-sm="row" class="margin-top-5">
@@ -47,17 +47,17 @@
               <md-divider></md-divider>
               <div layout="row" layout-wrap layout-gt-sm="row" class="margin-top-15">
                 <div flex="50">
-                  <md-checkbox ng-model="rochester" aria-label="Rochester Hills">
-                    Rochester Hills
-                  </md-checkbox>
-                </div>
-                <div flex="50">
                   <md-checkbox ng-model="rochester" aria-label="Ann Arbor">
                     Ann Arbor
                   </md-checkbox>
                 </div>
+                <div flex="50">
+                  <md-checkbox ng-model="rochester" aria-label="Rochester Hills">
+                    Rochester Hills
+                  </md-checkbox>
+                </div>
               </div>
-            </fieldset>            
+            </fieldset>
           </div>
         </div>
       </div>
