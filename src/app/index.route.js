@@ -12,7 +12,10 @@
         url: '/',
         templateUrl: 'app/account/tmpl.login.html',
         controller: 'LoginController',
-        controllerAs: 'LoginCtrl'
+        controllerAs: 'LoginCtrl',
+        data: {
+          title: 'Login'
+        }
       })
       .state('li', {
         resolve: {

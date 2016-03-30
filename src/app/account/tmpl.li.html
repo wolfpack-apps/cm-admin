@@ -15,10 +15,10 @@
           <p>Your payments</p>
         </md-list-item>
         <md-list-item ng-click="$state.go('login')">
-          <p>Log a manual payment</p>
+          <p>Create a new invoice</p>
         </md-list-item>
         <md-list-item ng-click="$state.go('login')">
-          <p>Create a new invoice</p>
+          <p>Record a manual payment</p>
         </md-list-item>
         <md-subheader class="md-no-sticky" md-theme="white-bg">Teams:</md-subheader>
         <md-list-item ng-click="$state.go('li.teams')">
@@ -50,6 +50,9 @@
           $mdSidenav('left').toggle(); -->
         <h1 flex class="md-toolbar-tools">Club Manager{{ ' » ' + $state.current.data.title }}</h1>
         <span flex></span>
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-icon>monetization_on</md-icon>
+        </md-button>
         <md-button class="md-icon-button" aria-label="Settings">
           <md-icon>notifications</md-icon>
         </md-button>
