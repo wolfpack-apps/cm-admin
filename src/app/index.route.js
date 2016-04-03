@@ -50,6 +50,15 @@
           title: "Your payments"
         }
       })
+      .state('li.invoices', {
+        url: '/invoices',
+        templateUrl: 'app/invoices/tmpl.index.html',
+        controller: 'InvoicesIndexController',
+        controllerAs: 'InvoicesCtrl',
+        data: {
+          title: "Your invoices"
+        }
+      })
       .state('li.teams', {
         url: '/teams',
         templateUrl: 'app/teams/tmpl.index.html',
