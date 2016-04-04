@@ -1,5 +1,5 @@
 <div id="teams-index" layout="row">
-  <div flex="90" flex-offset="5">
+  <div flex="90" flex-offset="5" ui-view>
     <h2 class="md-display-1">Your invoices</h2>
     <div layout="row">
       <div flex="40">
@@ -11,7 +11,7 @@
       <div flex>
         <md-card>
           <md-list class="pad-0">
-            <md-list-item class="md-2-line" ng-click="$state.go('li.teams.create')">
+            <md-list-item class="md-2-line" ng-click="$state.go('li.invoices.create')">
               <md-icon class="md-avatar-icon md-warn">warning</md-icon>
               <div class="md-list-item-text">
                 <h3>

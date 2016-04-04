@@ -59,6 +59,15 @@
           title: "Your invoices"
         }
       })
+      .state('li.invoices.create', {
+        url: '/create',
+        templateUrl: 'app/invoices/tmpl.create.html',
+        controller: 'InvoicesCreateController',
+        controllerAs: 'InvoicesCreateCtrl',
+        data: {
+          title: "Create a new invoice"
+        }
+      })
       .state('li.teams', {
         url: '/teams',
         templateUrl: 'app/teams/tmpl.index.html',
