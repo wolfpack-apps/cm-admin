@@ -1,42 +1,50 @@
 /* general */
 
-.padding-5 {
+.pad-0 {
+  padding: 0px;
+}
+
+.pad-5 {
   padding: 5px;
 }
 
-.padding-10 {
+.pad-10 {
   padding: 10px;
 }
 
-.padding-15 {
+.pad-15 {
   padding: 15px;
 }
 
-.padding-20 {
+.pad-20 {
   padding: 20px;
 }
 
-.padding-30 {
+.pad-30 {
   padding: 30px;
 }
 
-.padding-40 {
+.pad-40 {
   padding: 40px;
 }
 
-.padding-60 {
+.pad-60 {
   padding: 60px;
 }
 
-.padding-80 {
+.pad-80 {
   padding: 80px;
 }
 
-.padding-100 {
+.pad-100 {
   padding: 100px;
 }
 
 /* top */
+
+.pad-top-0 {
+  padding-top: 0px;
+}
 
 .pad-top-5 {
   padding-top: 5px;

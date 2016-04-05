@@ -24,7 +24,8 @@
     // theming
     $mdThemingProvider.theme('default')
       .primaryPalette('red')
-      .accentPalette('indigo');
+      .accentPalette('indigo')
+      .warnPalette('amber');
 
 
     $mdThemingProvider.theme('white-bg', 'default')
