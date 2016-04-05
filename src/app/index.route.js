@@ -60,7 +60,7 @@
         }
       })
       .state('li.teams.detail', {
-        url: '/teams/:id',
+        url: '/:id',
         templateUrl: 'app/teams/tmpl.detail.html',
         controller: 'TeamDetailController',
         controllerAs: 'TeamDetailCtrl',
