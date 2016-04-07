@@ -20,14 +20,14 @@
               <div layout-gt-sm="row">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>First name*</label>
-                  <input required ng-model="user.firstName" name="firstName">
+                  <input required ng-model="RegisterClubCtrl.user.firstName" name="firstName">
                   <div ng-messages="registerForm.firstName.$error">
                     <div ng-message="required">First name is required</div>
                   </div>
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Last name*</label>
-                  <input required ng-model="user.lastName" name="lastName">
+                  <input required ng-model="RegisterClubCtrl.user.lastName" name="lastName">
                   <div ng-messages="registerForm.lastName.$error">
                     <div ng-message="required">Last name is required</div>
                   </div>
@@ -35,14 +35,14 @@
               </div>
 
               <div layout-gt-sm="row">
-                <md-input-container class="md-block" flex-gt-sm>
+                <md-input-container class="md-block pad-bottom-20" flex-gt-sm>
                   <label>Are you registering as a player?</label>
-                  <md-select ng-model="user.type">
-                    <md-option>
-                      Parent
-                    </md-option>
+                  <md-select ng-model="RegisterClubCtrl.user.type">
                     <md-option>
                       Player
+                    </md-option>
+                    <md-option>
+                      Parent
                     </md-option>
                     <md-option>
                       Coach
@@ -57,7 +57,7 @@
               <div layout-gt-sm="row">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Email*</label>
-                  <input required name="email" ng-model="user.email" ng-pattern="/^.+@.+\..+$/">
+                  <input required name="email" ng-model="RegisterClubCtrl.user.email" ng-pattern="/^.+@.+\..+$/">
                   <div ng-messages="registerForm.email.$error">
                     <div ng-message="required">Email is required</div>
                     <div ng-message="pattern">Must be a email</div>
@@ -68,14 +68,15 @@
               <div layout-gt-sm="row">
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Password*</label>
-                  <input type="password" name="password" required ng-model="user.password" minlength="6">
+                  <input type="password" name="password" required ng-model="RegisterClubCtrl.user.password" minlength="6">
                   <div ng-messages="registerForm.password.$error">
                     <div ng-message="minlength">Not long enough</div>
+                    <div ng-message="minlength">Password is required</div>
                   </div>
                 </md-input-container>
                 <md-input-container class="md-block" flex-gt-sm>
                   <label>Confirmation*</label>
-                  <input type="password" required ng-model="user.passwordConfirm" name="passwordConfirm" ng-pattern="user.password">
+                  <input type="password" required ng-model="RegisterClubCtrl.user.passwordConfirm" name="passwordConfirm" ng-pattern="RegisterClubCtrl.user.password">
                   <div ng-messages="registerForm.passwordConfirm.$error">
                     <div ng-message="pattern">Passwords don't match</div>
                   </div>
@@ -85,7 +86,7 @@
             </form>
           </md-card-content>
           <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-accent">Next</md-button>
+            <md-button class="md-accent md-raised" ng-disabled="!RegisterClubCtrl.user.firstName || !RegisterClubCtrl.user.lastName || !RegisterClubCtrl.user.email || !RegisterClubCtrl.user.password || !RegisterClubCtrl.user.passwordConfirm" ng-click="RegisterClubCtrl.register()">Next</md-button>
           </md-card-actions>
         </md-card>
       </div>
