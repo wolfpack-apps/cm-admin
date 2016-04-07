@@ -6,7 +6,7 @@
     .controller('RegisterClubController', RegisterClubController);
 
   /** @ngInject */
-  function RegisterClubController ($log, $state, Auth) {
+  function RegisterClubController ($log, $state, $mdToast, Auth) {
 
     var vm = this;
 
@@ -26,8 +26,11 @@
         $state.go('li.payments')
       })
       .catch(function(error) {
-        $log.warn(error)
-        vm.loginError = error;
+        $mdToast.show(
+          $mdToast.simple()
+            .textContent(error.message)
+            .position('bottom right')
+        );
       });
     }
 
