@@ -8,6 +8,24 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
+      .state('register', {
+        url: '/register',
+        templateUrl: 'app/register/tmpl.register.html',
+        controller: 'RegisterController',
+        controllerAs: 'RegisterCtrl',
+        data: {
+          title: 'Register'
+        }
+      })
+      .state('register.team', {
+        url: '/:id',
+        templateUrl: 'app/register/tmpl.club.html',
+        controller: 'RegisterClubController',
+        controllerAs: 'RegisterClubCtrl',
+        data: {
+          title: 'Register'
+        }
+      })
       .state('login', {
         url: '/',
         templateUrl: 'app/account/tmpl.login.html',
