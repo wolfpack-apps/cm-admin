@@ -8,12 +8,16 @@
         </p>
       </div>
       <div flex flex-offset="10">
-        <md-card>
+        <md-card ui-view md-theme="default">
           <md-card-title>
             <md-card-title-text>
-              <span class="md-headline">Basic info</span>
+              <div layout="row">
+                <span class="md-headline" flex>Basic info</span>
+                <span class="md-headline" flex="10"><small class="float-right">(1/4)</small></span>
+              </div>
             </md-card-title-text>
           </md-card-title>
+          <md-progress-linear md-mode="determinate" value="25"></md-progress-linear>
           <md-card-content layout-padding>
             <form name="registerForm">
 
@@ -83,7 +87,8 @@
             </form>
           </md-card-content>
           <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-accent md-raised" ng-disabled="!RegisterClubCtrl.user.firstName || !RegisterClubCtrl.user.lastName || !RegisterClubCtrl.user.email || !RegisterClubCtrl.user.password || !RegisterClubCtrl.user.passwordConfirm" ng-click="RegisterClubCtrl.register()">Next</md-button>
+            <!-- <md-button class="md-accent md-raised" ng-disabled="!RegisterClubCtrl.user.firstName || !RegisterClubCtrl.user.lastName || !RegisterClubCtrl.user.email || !RegisterClubCtrl.user.password || !RegisterClubCtrl.user.passwordConfirm" ng-click="RegisterClubCtrl.register()">Next</md-button> -->
+            <md-button class="md-accent md-raised" ng-disabled="!RegisterClubCtrl.user.firstName || !RegisterClubCtrl.user.lastName || !RegisterClubCtrl.user.email || !RegisterClubCtrl.user.password || !RegisterClubCtrl.user.passwordConfirm" ng-click="$state.go('register.club.team', {id: 'vardar'})">Next</md-button>
           </md-card-actions>
         </md-card>
       </div>
