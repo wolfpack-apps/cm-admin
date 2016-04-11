@@ -86,13 +86,22 @@
           title: 'Your account'
         }
       })
+      .state('li.tasks', {
+        url: '/tasks',
+        templateUrl: 'app/tasks/tmpl.index.html',
+        controller: 'TasksController',
+        controllerAs: 'TasksCtrl',
+        data: {
+          title: 'Your Tasks'
+        }
+      })
       .state('li.payments', {
         url: '/payments',
         templateUrl: 'app/payments/tmpl.index.html',
         controller: 'PaymentIndexController',
         controllerAs: 'PaymentsCtrl',
         data: {
-          title: 'Your payments'
+          title: 'Your Payments'
         }
       })
       .state('li.teams', {
@@ -101,7 +110,7 @@
         controller: 'TeamIndexController',
         controllerAs: 'TeamIndexCtrl',
         data: {
-          title: 'Your teams'
+          title: 'Your Teams'
         }
       })
       .state('li.teams.detail', {
