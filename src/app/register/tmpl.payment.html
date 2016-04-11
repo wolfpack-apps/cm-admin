@@ -17,7 +17,9 @@
       <md-input-container class="md-block" flex-gt-sm>
         <label>Payment Method</label>
         <md-select ng-model="RegisterClubCtrl.payment.paymentMethod" name="paymentMethod">
-          <md-option value="creditCard" selected>Credit Card</md-option>
+          <md-option value="visa" selected>Visa</md-option>
+          <md-option value="amex">American Express</md-option>
+          <md-option value="masterCard">Master Card</md-option>
           <md-option value="ach" disabled>Checking Account (coming soon)</md-option>
         </md-select>
       </md-input-container>
@@ -36,7 +38,7 @@
 
     <div layout-gt-sm="row">
       <md-input-container flex="30" style="margin-right: 10px;" >
-        <label>Exp. Month</label>
+        <label>Exp. month</label>
         <md-select ng-model="RegisterClubCtrl.payment.month">
           <md-option value="01">Jan</md-option>
           <md-option value="02">Feb</md-option>
@@ -53,7 +55,7 @@
         </md-select>
       </md-input-container>
       <md-input-container flex="35" style="margin-right: 10px;">
-        <label>Year</label>
+        <label>Exp. year</label>
         <md-select ng-model="RegisterClubCtrl.payment.year">
           <md-option value="2016">2016</md-option>
           <md-option value="2017">2017</md-option>
