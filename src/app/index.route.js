@@ -8,6 +8,51 @@
   /** @ngInject */
   function routerConfig($stateProvider, $urlRouterProvider) {
     $stateProvider
+      .state('register', {
+        url: '/register',
+        templateUrl: 'app/register/tmpl.register.html',
+        controller: 'RegisterController',
+        controllerAs: 'RegisterCtrl',
+        data: {
+          title: 'Register'
+        }
+      })
+      .state('register.club', {
+        url: '/:id',
+        templateUrl: 'app/register/tmpl.club.html',
+        controller: 'RegisterClubController',
+        controllerAs: 'RegisterClubCtrl',
+        data: {
+          title: 'Register'
+        }
+      })
+      .state('register.club.team', {
+        url: '/team',
+        templateUrl: 'app/register/tmpl.team.html',
+        controller: 'RegisterTeamController',
+        controllerAs: 'RegisterTeamCtrl',
+        data: {
+          title: 'Register'
+        }
+      })
+      .state('register.club.payment', {
+        url: '/payment',
+        templateUrl: 'app/register/tmpl.payment.html',
+        controller: 'RegisterPaymentController',
+        controllerAs: 'RegisterPaymentCtrl',
+        data: {
+          title: 'Register'
+        }
+      })
+      .state('register.club.confirm', {
+        url: '/confirm',
+        templateUrl: 'app/register/tmpl.confirm.html',
+        controller: 'RegisterPaymentController',
+        controllerAs: 'RegisterPaymentCtrl',
+        data: {
+          title: 'Register'
+        }
+      })
       .state('login', {
         url: '/',
         templateUrl: 'app/account/tmpl.login.html',
