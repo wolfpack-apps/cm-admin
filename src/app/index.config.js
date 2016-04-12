@@ -27,16 +27,30 @@
       .accentPalette('indigo')
       .warnPalette('red');
 
-    $mdThemingProvider.theme('account')
-      .primaryPalette('cyan', {
-        'default': '700'
+    $mdThemingProvider.theme('default-side-menu', 'default')
+      .backgroundPalette('blue-grey', {
+        'default': '50'
       });
 
-    $mdThemingProvider.theme('teams')
+    $mdThemingProvider.theme('account')
       .primaryPalette('blue', {
         'default': '700'
       });
 
+    $mdThemingProvider.theme('account-side-menu', 'account')
+      .backgroundPalette('blue-grey', {
+        'default': '50'
+      });
+
+    $mdThemingProvider.theme('teams')
+      .primaryPalette('cyan', {
+        'default': '700'
+      });
+
+    $mdThemingProvider.theme('teams-side-menu', 'teams')
+      .backgroundPalette('blue-grey', {
+        'default': '50'
+      });
 
     $mdThemingProvider.theme('white-bg', 'default')
       .backgroundPalette('blue-grey', {

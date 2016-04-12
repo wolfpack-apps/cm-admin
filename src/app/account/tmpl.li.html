@@ -5,19 +5,25 @@
         <md-button class="md-icon-button" aria-label="Settings" ng-click="AccountCtrl.toggleSidenav()" hide-gt-md>
           <md-icon>menu</md-icon>
         </md-button>
-        <h1>Vardar Soccer</h1>
+        <h1>Club Manager</h1>
       </div>
     </md-toolbar>
     <md-content>
       <md-list flex>
-        <md-subheader class="md-no-sticky" md-theme="white-bg">Payments:</md-subheader>
+        <md-subheader class="md-no-sticky md-primary" md-theme="default-side-menu">
+          <md-icon class="md-primary md-caption">monetization_on</md-icon>
+          Payments:
+        </md-subheader>
         <md-list-item ng-click="$state.go('li.payments')">
           <p>Your payments</p>
         </md-list-item>
         <md-list-item ng-click="$state.go('login')">
           <p>Record a manual payment</p>
         </md-list-item>
-        <md-subheader class="md-no-sticky" md-theme="white-bg">Teams:</md-subheader>
+        <md-subheader class="md-no-sticky md-primary" md-theme="teams-side-menu">
+          <md-icon class="md-primary md-caption">people</md-icon>
+          Teams:
+        </md-subheader>
         <md-list-item ng-click="$state.go('li.teams')">
           <p>Your teams</p>
         </md-list-item>
@@ -30,7 +36,10 @@
         <md-list-item ng-click="$state.go('login')">
           <p>Create a new team</p>
         </md-list-item>
-        <md-subheader class="md-no-sticky" md-theme="white-bg">Account:</md-subheader>
+        <md-subheader class="md-no-sticky md-primary" md-theme="account-side-menu">
+          <md-icon class="md-primary md-caption">account_circle</md-icon>
+          Account:
+        </md-subheader>
         <md-list-item ng-click="$state.go('li.account')">
           <p>Your account</p>
         </md-list-item>
@@ -48,7 +57,7 @@
         </md-button>
         <!-- Add a toggleMenu function to your menuCtrl controller with the following in it
           $mdSidenav('left').toggle(); -->
-        <h1 flex class="md-toolbar-tools">Club Manager{{ ' » ' + $state.current.data.title }}</h1>
+        <h1 flex class="md-toolbar-tools">Vardar Soccer{{ ' » ' + $state.current.data.title }}</h1>
         <span flex></span>
         <md-button class="md-icon-button" aria-label="Settings">
           <md-icon>monetization_on</md-icon>
