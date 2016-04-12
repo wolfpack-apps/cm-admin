@@ -121,6 +121,15 @@
         data: {
           title: 'Team Detail'
         }
+      })
+      .state('li.coaches', {
+        url: '/coaches',
+        templateUrl: 'app/coaches/tmpl.index.html',
+        controller: 'CoachIndexController',
+        controllerAs: 'CoachIndexCtrl',
+        data: {
+          title: 'Your Coaches'
+        }
       });
 
     $urlRouterProvider.otherwise('/');
