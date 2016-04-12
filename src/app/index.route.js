@@ -130,6 +130,15 @@
         data: {
           title: 'Your Coaches'
         }
+      })
+      .state('li.coaches.detail', {
+        url: '/:id',
+        templateUrl: 'app/coaches/tmpl.detail.html',
+        controller: 'CoachDetailController',
+        controllerAs: 'CoachDetailCtrl',
+        data: {
+          title: "Coach Detail"
+        }
       });
 
     $urlRouterProvider.otherwise('/');
