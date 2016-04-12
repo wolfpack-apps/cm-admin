@@ -75,7 +75,10 @@
         templateUrl: 'app/account/tmpl.li.html',
         controller: 'AccountController',
         controllerAs: 'AccountCtrl',
-        abstract: true
+        abstract: true,
+        data: {
+          theme: 'default'
+        }
       })
       .state('li.account', {
         url: '/account',
@@ -83,7 +86,8 @@
         controller: 'AccountEditController',
         controllerAs: 'AccountCtrl',
         data: {
-          title: 'Your account'
+          title: 'Your Account',
+          theme: 'account'
         }
       })
       .state('li.tasks', {
@@ -92,7 +96,8 @@
         controller: 'TasksController',
         controllerAs: 'TasksCtrl',
         data: {
-          title: 'Your Tasks'
+          title: 'Your Tasks',
+          theme: 'account'
         }
       })
       .state('li.payments', {
@@ -110,7 +115,8 @@
         controller: 'TeamIndexController',
         controllerAs: 'TeamIndexCtrl',
         data: {
-          title: 'Your Teams'
+          title: 'Your Teams',
+          theme: 'teams'
         }
       })
       .state('li.teams.detail', {
@@ -128,7 +134,8 @@
         controller: 'CoachIndexController',
         controllerAs: 'CoachIndexCtrl',
         data: {
-          title: 'Your Coaches'
+          title: 'Your Coaches',
+          theme: 'teams'
         }
       })
       .state('li.coaches.detail', {

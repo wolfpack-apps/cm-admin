@@ -27,6 +27,16 @@
       .accentPalette('indigo')
       .warnPalette('red');
 
+    $mdThemingProvider.theme('account')
+      .primaryPalette('cyan', {
+        'default': '700'
+      });
+
+    $mdThemingProvider.theme('teams')
+      .primaryPalette('blue', {
+        'default': '700'
+      });
+
 
     $mdThemingProvider.theme('white-bg', 'default')
       .backgroundPalette('blue-grey', {
@@ -35,6 +45,8 @@
 
     $mdThemingProvider.theme('indigo-bg', 'default')
       .backgroundPalette('indigo');
+
+    $mdThemingProvider.alwaysWatchTheme(true);
   }
 
 })();
