@@ -23,10 +23,34 @@
 
     // theming
     $mdThemingProvider.theme('default')
-      .primaryPalette('red')
+      .primaryPalette('teal')
       .accentPalette('indigo')
-      .warnPalette('amber');
+      .warnPalette('red');
 
+    $mdThemingProvider.theme('default-side-menu', 'default')
+      .backgroundPalette('blue-grey', {
+        'default': '50'
+      });
+
+    $mdThemingProvider.theme('account')
+      .primaryPalette('blue', {
+        'default': '700'
+      });
+
+    $mdThemingProvider.theme('account-side-menu', 'account')
+      .backgroundPalette('blue-grey', {
+        'default': '50'
+      });
+
+    $mdThemingProvider.theme('teams')
+      .primaryPalette('cyan', {
+        'default': '700'
+      });
+
+    $mdThemingProvider.theme('teams-side-menu', 'teams')
+      .backgroundPalette('blue-grey', {
+        'default': '50'
+      });
 
     $mdThemingProvider.theme('white-bg', 'default')
       .backgroundPalette('blue-grey', {
@@ -35,6 +59,8 @@
 
     $mdThemingProvider.theme('indigo-bg', 'default')
       .backgroundPalette('indigo');
+
+    $mdThemingProvider.alwaysWatchTheme(true);
   }
 
 })();
