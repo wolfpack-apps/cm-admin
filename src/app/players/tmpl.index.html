@@ -1,11 +1,11 @@
 <div id="teams-index" layout="row">
   <div ui-view flex="90" flex-offset="5">
 
-    <h2 class="md-display-1">Your teams</h2>
+    <h2 class="md-display-1">Your players</h2>
     <div layout="row">
       <div flex="40" class="margin-right-15">
         <p class="md-body-1">
-          Manage all of your teams from this view, it doesnt matter if you have one or one hundred.
+          Manage all of your players from this view, it doesnt matter if you have one or one hundred.
         </p>
         <p class="md-body-1">
           Use the settings below to sort and filter by specific parameters.
@@ -13,7 +13,7 @@
         <div layout="row" class="margin-top-60">
           <div flex="90">
             <fieldset class="standard">
-              <legend>&nbsp; Filter teams &nbsp;</legend>
+              <legend>&nbsp; Filter players &nbsp;</legend>
               <div layout="row" layout-wrap layout-gt-sm="row" class="margin-top-10">
                 <div flex="50">
                   <md-checkbox ng-model="boys" aria-label="Checkbox 1">
@@ -68,7 +68,7 @@
               <md-icon class="md-avatar-icon md-warn">warning</md-icon>
               <div class="md-list-item-text">
                 <h3>
-                  You don't have any teams yet. <strong>Create one now.</strong>
+                  You don't have any players yet. <strong>Invite one now.</strong>
                 </h3>
                 <md-icon class="md-secondary">chevron_right</md-icon>
               </div>
@@ -76,27 +76,16 @@
           </md-list>
         </md-card>
         <p>
-          Placeholder to show example of teams
+          Placeholder to show example of players
         </p>
         <md-card>
           <md-list style="padding: 0px;">
-            <md-list-item class="md-2-line" ng-click="$state.go('li.teams.detail', {id: '1oi2jc92e2'})">
-              <img class="md-avatar" ng-src="http://placehold.it/100x100/2196F3/ffffff?text=U15">
+            <md-list-item class="md-2-line" ng-click="$state.go('li.players.detail', {id: '1oi2jc92e2'})">
+              <img class="md-avatar" ng-src="/assets/images/justin.jpg">
               <div class="md-list-item-text">
-                <h3>Boys U15 Vardar</h3>
+                <h3><strong>Justin Lupenec</strong> - 15</h3>
                 <p>
-                  Head coach: Bob Read
-                </p>
-                <md-icon class="md-secondary">chevron_right</md-icon>
-              </div>
-              <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="md-2-line" ng-click="$state.go('li.teams.detail', {id: '1oi2jc92e2'})">
-              <img class="md-avatar" ng-src="http://placehold.it/100x100/E91E63/ffffff?text=U16">
-              <div class="md-list-item-text">
-                <h3>Girls U16 Ann Arbor</h3>
-                <p>
-                  Head Coach: Lucian Popescu
+                  Goalkeeper
                 </p>
                 <md-icon class="md-secondary">chevron_right</md-icon>
               </div>

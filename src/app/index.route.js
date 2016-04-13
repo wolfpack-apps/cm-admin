@@ -128,6 +128,16 @@
           title: 'Team Detail'
         }
       })
+      .state('li.players', {
+        url: '/players',
+        templateUrl: 'app/players/tmpl.index.html',
+        controller: 'PlayerIndexController',
+        controllerAs: 'PlayerIndexCtrl',
+        data: {
+          title: 'Your Players',
+          theme: 'teams'
+        }
+      })
       .state('li.coaches', {
         url: '/coaches',
         templateUrl: 'app/coaches/tmpl.index.html',
