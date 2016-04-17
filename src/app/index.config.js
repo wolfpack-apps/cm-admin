@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig, $mdThemingProvider) {
+  function config($logProvider, toastrConfig, $mdIconProvider, $mdThemingProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -20,6 +20,9 @@
 
     // setup icons
     // $mdIconProvider.defaultIconSet(url, [viewBoxSize]);
+    $mdIconProvider.icon('wolfpack', 'assets/images/logo.svg');
+    $mdIconProvider.icon('wolfpack-dark', 'assets/images/logo-dark.svg');
+    $mdIconProvider.icon('wolfpack-light', 'assets/images/logo-light.svg');
 
     // theming
     $mdThemingProvider.theme('default')
