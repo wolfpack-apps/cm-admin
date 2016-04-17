@@ -109,6 +109,15 @@
           title: 'Your Payments'
         }
       })
+      .state('li.payments.detail', {
+        url: '/:id',
+        templateUrl: 'app/payments/tmpl.detail.html',
+        controller: 'PaymentDetailController',
+        controllerAs: 'PaymentDetailCtrl',
+        data: {
+          title: 'Payment Detail'
+        }
+      })
       .state('li.teams', {
         url: '/teams',
         templateUrl: 'app/teams/tmpl.index.html',
