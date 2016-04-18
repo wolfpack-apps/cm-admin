@@ -90,13 +90,13 @@
           theme: 'account'
         }
       })
-      .state('li.tasks', {
-        url: '/tasks',
-        templateUrl: 'app/tasks/tmpl.index.html',
-        controller: 'TasksController',
-        controllerAs: 'TasksCtrl',
+      .state('li.notifications', {
+        url: '/notifications',
+        templateUrl: 'app/notifications/tmpl.index.html',
+        controller: 'NotificationIndexController',
+        controllerAs: 'NotificationIndexCtrl',
         data: {
-          title: 'Your Tasks',
+          title: 'Your Notifications',
           theme: 'account'
         }
       })
