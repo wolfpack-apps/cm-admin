@@ -147,6 +147,15 @@
           theme: 'teams'
         }
       })
+      .state('li.players.detail', {
+        url: '/:id',
+        templateUrl: 'app/players/tmpl.detail.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail'
+        }
+      })
       .state('li.coaches', {
         url: '/coaches',
         templateUrl: 'app/coaches/tmpl.index.html',
