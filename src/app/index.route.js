@@ -82,9 +82,9 @@
       })
       .state('li.account', {
         url: '/account',
-        templateUrl: 'app/account/tmpl.edit.html',
-        controller: 'AccountEditController',
-        controllerAs: 'AccountCtrl',
+        templateUrl: 'app/account/tmpl.detail.html',
+        controller: 'AccountDetailController',
+        controllerAs: 'AccountDetailCtrl',
         data: {
           title: 'Your Account',
           theme: 'account'

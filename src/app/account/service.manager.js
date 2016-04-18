@@ -6,11 +6,12 @@
     .factory('Manager', Manager);
 
   /** @ngInject */
-  function Manager (FIREBASE_URL, $firebaseAuth, $firebaseArray, $firebaseObject) {
+  function Manager (FIREBASE_URL, $firebaseAuth, $firebaseObject, Auth) {
+
+    var itemsRef = new Firebase(FIREBASE_URL + '/managers');
 
     /* example of a manager object (userData)
     {
-      uid: '56f6a463-4bf0-4073-b849-58d50544905e' // String
       first_name: 'Jordan',                       // String
       last_name: 'Skole',                         // String
       email: 'jordan@wolfpackapps.com',           // Email
@@ -24,17 +25,8 @@
     }
     */
 
-    var itemsRef = new Firebase(FIREBASE_URL + '/managers');
-    var query = itemsRef.orderByChild('uid').equalTo(Auth.$getAuth().uid);
+    return $firebaseObject(itemsRef.child(Auth.$getAuth().uid));
 
-    return {
-      create: function (userData) {
-        return $firebaseArray(itemsRef).$add(userData);
-      },
-      get: function () {
-        return $firebaseObject(query);
-      }
-    };
   }
 
 })();
