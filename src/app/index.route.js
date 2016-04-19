@@ -97,6 +97,13 @@
           title: 'Your Account - Name'
         }
       })
+      .state('li.account.email', {
+        url: '/email',
+        templateUrl: 'app/account/tmpl.detail.email.html',
+        data: {
+          title: 'Your Account - Email'
+        }
+      })
       .state('li.notifications', {
         url: '/notifications',
         templateUrl: 'app/notifications/tmpl.index.html',

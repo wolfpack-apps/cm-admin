@@ -6,10 +6,11 @@
     .controller('AccountController', AccountController);
 
   /** @ngInject */
-  function AccountController ($state, $mdSidenav, Auth, CurrentAuth) {
+  function AccountController ($state, $log, $mdSidenav, Auth, CurrentAuth) {
 
     var vm = this;
     vm.me = CurrentAuth;
+    $log.log(vm.me);
 
     /*
      * Functions

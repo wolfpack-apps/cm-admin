@@ -9,7 +9,7 @@
         </p>
       </div><!-- flex 40 -->
       <div flex>
-        <md-card ui-view="personal">
+        <md-card>
           <md-list style="padding: 0px;">
             <md-list-item layout="row" ng-click="$state.go('li.account.name')">
               <div flex="35">
@@ -26,7 +26,7 @@
                 <p class="md-body-2">Email:</p>
               </div>
               <div flex>
-                <p class="md-body-1">jordan@skole.us</p>
+                <p class="md-body-1">{{ AccountDetailCtrl.me.password.email }}</p>
               </div>
               <md-icon>edit</md-icon>
               <md-divider></md-divider>
@@ -37,8 +37,8 @@
               </div>
               <div flex class="md-list-item-text">
                 <p class="md-body-1">
-                  (248) 881-7460<br>
-                  (248) 505-6339
+                  {{ AccountDetailCtrl.manager.cell_phone | tel }}<br>
+                  {{ AccountDetailCtrl.manager.work_phone | tel }}
                 </p>
               </div>
               <md-icon>edit</md-icon>
