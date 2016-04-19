@@ -90,6 +90,13 @@
           theme: 'account'
         }
       })
+      .state('li.account.name', {
+        url: '/name',
+        templateUrl: 'app/account/tmpl.detail.name.html',
+        data: {
+          title: 'Your Account - Name'
+        }
+      })
       .state('li.notifications', {
         url: '/notifications',
         templateUrl: 'app/notifications/tmpl.index.html',
