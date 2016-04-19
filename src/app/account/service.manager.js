@@ -24,8 +24,8 @@
       state: 'MI'                                 // State
     }
     */
-
     return $firebaseObject(itemsRef.child(Auth.$getAuth().uid));
+
 
   }
 
