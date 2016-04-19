@@ -82,12 +82,47 @@
       })
       .state('li.account', {
         url: '/account',
-        templateUrl: 'app/account/tmpl.edit.html',
-        controller: 'AccountEditController',
-        controllerAs: 'AccountCtrl',
+        templateUrl: 'app/account/tmpl.detail.html',
+        controller: 'AccountDetailController',
+        controllerAs: 'AccountDetailCtrl',
         data: {
           title: 'Your Account',
           theme: 'account'
+        }
+      })
+      .state('li.account.name', {
+        url: '/name',
+        templateUrl: 'app/account/tmpl.detail.name.html',
+        data: {
+          title: 'Your Account - Edit: Name'
+        }
+      })
+      .state('li.account.email', {
+        url: '/email',
+        templateUrl: 'app/account/tmpl.detail.email.html',
+        data: {
+          title: 'Your Account - Edit: Email'
+        }
+      })
+      .state('li.account.phone', {
+        url: '/phone',
+        templateUrl: 'app/account/tmpl.detail.phone.html',
+        data: {
+          title: 'Your Account - Edit: Phone'
+        }
+      })
+      .state('li.account.birthday', {
+        url: '/birthday',
+        templateUrl: 'app/account/tmpl.detail.birthday.html',
+        data: {
+          title: 'Your Account - Edit: Birthday'
+        }
+      })
+      .state('li.account.address', {
+        url: '/address',
+        templateUrl: 'app/account/tmpl.detail.address.html',
+        data: {
+          title: 'Your Account - Edit: Address'
         }
       })
       .state('li.notifications', {

@@ -65,10 +65,10 @@
             <md-icon class="md-primary md-caption">account_balance</md-icon>
             Account:
           </md-subheader>
-          <md-list-item ng-click="$state.go('li.account')" md-ink-ripple="#1976D2" ng-disabled="$state.current.name == 'li.account'">
+          <md-list-item ng-click="$state.go('li.account')" md-ink-ripple="#1976D2" ng-disabled="$state.current.name == 'li.account' || $state.$current.parent.self.name == 'li.account'">
             <p>
               Your account
-              <md-icon class="md-secondary md-primary" ng-show="$state.current.name == 'li.account'">chevron_right</md-icon>
+              <md-icon class="md-secondary md-primary" ng-show="$state.current.name == 'li.account' || $state.$current.parent.self.name == 'li.account'">chevron_right</md-icon>
             </p>
           </md-list-item>
           <md-list-item ng-click="$state.go('li.notifications')" md-ink-ripple="#1976D2" ng-disabled="$state.current.name == 'li.notifications'">
@@ -91,7 +91,6 @@
         <!-- Add a toggleMenu function to your menuCtrl controller with the following in it
           $mdSidenav('left').toggle(); -->
         <h1 flex class="md-toolbar-tools">Vardar Soccer{{ ' » ' + $state.current.data.title }}</h1>
-        <span flex></span>
         <md-button class="md-icon-button" aria-label="Settings">
           <md-icon>monetization_on</md-icon>
         </md-button>
