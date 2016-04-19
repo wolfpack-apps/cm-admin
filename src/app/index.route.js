@@ -94,14 +94,21 @@
         url: '/name',
         templateUrl: 'app/account/tmpl.detail.name.html',
         data: {
-          title: 'Your Account - Name'
+          title: 'Your Account - Edit: Name'
         }
       })
       .state('li.account.email', {
         url: '/email',
         templateUrl: 'app/account/tmpl.detail.email.html',
         data: {
-          title: 'Your Account - Email'
+          title: 'Your Account - Edit: Email'
+        }
+      })
+      .state('li.account.phone', {
+        url: '/phone',
+        templateUrl: 'app/account/tmpl.detail.phone.html',
+        data: {
+          title: 'Your Account - Edit: Phone'
         }
       })
       .state('li.notifications', {
