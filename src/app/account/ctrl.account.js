@@ -10,7 +10,6 @@
 
     var vm = this;
     vm.me = CurrentAuth;
-    $log.log(vm.me);
 
     /*
      * Functions

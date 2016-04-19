@@ -6,10 +6,11 @@
     .controller('AccountDetailController', AccountDetailController);
 
   /** @ngInject */
-  function AccountDetailController ($scope, $state, $mdSidenav, CurrentAuth, Manager) {
+  function AccountDetailController ($log, $scope, $state, $mdSidenav, CurrentAuth, Manager) {
 
     var vm = this;
     vm.me = CurrentAuth;
+
     // read this for 3-way data binding and controllerAs syntax
     // http://stackoverflow.com/a/28803778/1061009
     // Manager.$bindTo($scope, 'manager');
@@ -19,7 +20,12 @@
         vm.manager = managerData;
       });
 
+    /*
+     * Functions
+     */
+
     vm.saveManager = function (route) {
+      $log.log(vm.manager);
       vm.manager
         .$save()
         .then(function (ref) {
@@ -27,9 +33,11 @@
         })
     }
 
-    /*
-     * Functions
-     */
+    vm.range = function (num) {
+      return new Array(num);
+    }
+
+
     // manager.$loaded()
     //   .then(function () {
     //     $log.log('loaded');

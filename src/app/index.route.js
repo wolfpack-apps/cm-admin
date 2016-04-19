@@ -111,6 +111,13 @@
           title: 'Your Account - Edit: Phone'
         }
       })
+      .state('li.account.birthday', {
+        url: '/birthday',
+        templateUrl: 'app/account/tmpl.detail.birthday.html',
+        data: {
+          title: 'Your Account - Edit: Birthday'
+        }
+      })
       .state('li.notifications', {
         url: '/notifications',
         templateUrl: 'app/notifications/tmpl.index.html',
