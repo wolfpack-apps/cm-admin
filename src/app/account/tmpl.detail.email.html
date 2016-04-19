@@ -8,7 +8,7 @@
   <div flex>
 
     <md-card>
-      <md-list style="padding: 0px;">
+      <md-list class="pad-0">
         <md-list-item layout="row" ng-click="$state.go('li.account.name')">
           <div flex="35">
             <p class="md-body-2">Name:</p>
@@ -23,7 +23,7 @@
     </md-card>
 
     <md-card class="margin-top-20">
-      <md-list style="padding: 0px;">
+      <md-list class="pad-0">
         <md-list-item layout="row">
           <div class="md-list-item-text" flex>
             <p class="md-body-2">Email:</p>
@@ -43,15 +43,15 @@
     </md-card>
 
     <md-card class="margin-top-20">
-      <md-list style="padding: 0px;">
+      <md-list class="pad-0">
         <md-list-item ng-click="$state.go('li.account.phone')" class="md-long-text">
           <div flex="35">
             <p class="md-body-2">Phone:</p>
           </div>
           <div flex class="md-list-item-text">
             <p class="md-body-1">
-              {{ AccountDetailCtrl.manager.cell_phone | tel }}<br>
-              {{ AccountDetailCtrl.manager.work_phone | tel }}
+              {{ AccountDetailCtrl.manager.phone_cell | tel }}<br>
+              {{ AccountDetailCtrl.manager.phone_work | tel }}
             </p>
           </div>
           <md-icon>edit</md-icon>
