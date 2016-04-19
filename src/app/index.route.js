@@ -118,6 +118,13 @@
           title: 'Your Account - Edit: Birthday'
         }
       })
+      .state('li.account.address', {
+        url: '/address',
+        templateUrl: 'app/account/tmpl.detail.address.html',
+        data: {
+          title: 'Your Account - Edit: Address'
+        }
+      })
       .state('li.notifications', {
         url: '/notifications',
         templateUrl: 'app/notifications/tmpl.index.html',

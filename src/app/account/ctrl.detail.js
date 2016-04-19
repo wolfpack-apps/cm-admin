@@ -25,7 +25,6 @@
      */
 
     vm.saveManager = function (route) {
-      $log.log(vm.manager);
       vm.manager
         .$save()
         .then(function (ref) {
