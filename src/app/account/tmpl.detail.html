@@ -84,7 +84,22 @@
         </p>
       </div><!-- flex 40 -->
       <div flex>
-        <md-card>
+
+        <md-card ng-if="!AccountDetailCtrl.manager.companies">
+          <md-list class="pad-0">
+            <md-list-item class="md-2-line" ng-click="$state.go('li.company.name', {})">
+              <md-icon class="md-avatar-icon md-warn">warning</md-icon>
+              <div class="md-list-item-text">
+                <h3>
+                  You don't have a company yet. <strong>Create one now.</strong>
+                </h3>
+                <md-icon class="md-secondary">chevron_right</md-icon>
+              </div>
+            </md-list-item>
+          </md-list>
+        </md-card>
+
+        <md-card ng-if="AccountDetailCtrl.manager.companies">
           <md-list style="padding: 0px">
             <md-list-item ng-click="$state.go('li.account')" class="md-long-text">
               <div flex="35">
@@ -149,6 +164,7 @@
             </md-list-item>
           </md-list>
         </md-card>
+
       </div><!-- flex -->
     </div><!-- row -->
 

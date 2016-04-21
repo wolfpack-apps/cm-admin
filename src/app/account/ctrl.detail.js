@@ -6,10 +6,12 @@
     .controller('AccountDetailController', AccountDetailController);
 
   /** @ngInject */
-  function AccountDetailController ($log, $scope, $state, $mdSidenav, CurrentAuth, Manager) {
+  function AccountDetailController ($log, $scope, $state, $mdSidenav, CurrentAuth, Manager, Company) {
 
     var vm = this;
     vm.me = CurrentAuth;
+
+
 
     // read this for 3-way data binding and controllerAs syntax
     // http://stackoverflow.com/a/28803778/1061009
@@ -18,6 +20,14 @@
       .$loaded()
       .then(function (managerData) {
         vm.manager = managerData;
+      });
+
+    Company
+      .all()
+      .then(function (companyData) {
+        $log.log(companyData);
+      }, function (error) {
+        $log.error(error);
       });
 
     /*
