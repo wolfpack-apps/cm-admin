@@ -38,7 +38,7 @@
         .$save()
         .then(function (ref) {
           $state.go(route)
-        })
+        });
     }
 
     vm.createCompany = function () {

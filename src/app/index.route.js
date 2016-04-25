@@ -127,6 +127,7 @@
       })
       .state('li.account.company', {
         url: '/:id',
+        template: '<ui-view />',
         controller: 'CompanyDetailController',
         controllerAs: 'CompanyDetailCtrl',
         abstract: true

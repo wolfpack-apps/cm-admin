@@ -12,9 +12,9 @@
 
     /* example of a company object
     {
-      company_name: 'Vardar Soccer',
+      name: 'Vardar Soccer',
       manager_id: '25d77da1-398f-4519-be47-4ccfb99de0a6',
-      phone: 'Skole',
+      phone: '248-881-7460',
       tax_id_federal: '22-7812937',
       tax_id_state: '21-2038703',
       address_street: '169 Saxon Ct',
@@ -24,7 +24,7 @@
       address_zip: '48307',
       address_lat: '90283092', // not now
       address_long: '9832394-', // not now
-      teams: [ // false if empty
+      teams: [ // empty array if empty
         'hd3ocp3k3': true,
         'ceh03cc3s': true
       ]
