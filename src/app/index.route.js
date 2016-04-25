@@ -125,6 +125,20 @@
           title: 'Your Account - Edit: Address'
         }
       })
+      .state('li.account.company', {
+        url: '/:id',
+        controller: 'CompanyDetailController',
+        controllerAs: 'CompanyDetailCtrl',
+        abstract: true
+      })
+      .state('li.account.company.name', {
+        url: '/name',
+        templateUrl: 'app/companies/tmpl.detail.name.html',
+        data: {
+          title: 'Your Company - Edit: Company'
+        }
+
+      })
       .state('li.notifications', {
         url: '/notifications',
         templateUrl: 'app/notifications/tmpl.index.html',

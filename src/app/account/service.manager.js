@@ -11,7 +11,7 @@
     var itemsRef = new Firebase(FIREBASE_URL + '/managers');
     var Manager = $firebaseObject.$extend({
       $$defaults: {
-        companies: false
+        companies: new Array()
       }
     });
 

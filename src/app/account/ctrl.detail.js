@@ -11,8 +11,6 @@
     var vm = this;
     vm.me = CurrentAuth;
 
-
-
     // read this for 3-way data binding and controllerAs syntax
     // http://stackoverflow.com/a/28803778/1061009
     // Manager.$bindTo($scope, 'manager');
@@ -23,9 +21,10 @@
       });
 
     Company
-      .all()
+      .mine()
+      .$loaded()
       .then(function (companyData) {
-        $log.log(companyData);
+        vm.companies = companyData;
       }, function (error) {
         $log.error(error);
       });
@@ -40,6 +39,17 @@
         .then(function (ref) {
           $state.go(route)
         })
+    }
+
+    vm.createCompany = function () {
+      vm.companies
+        .$add({'manager_id': vm.me.uid})
+        .then(function (newCompany) {
+          vm.manager.companies.push(newCompany.key());
+          vm.manager.$save().then(function () {
+            $state.go('li.account.company.name', {id: newCompany.key()});
+          })
+        });
     }
 
     vm.range = function (num) {

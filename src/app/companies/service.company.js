@@ -34,7 +34,7 @@
 
     var Company = $firebaseObject.$extend({
       $$defaults: {
-        teams: false
+        teams: new Array()
       }
     })
 
@@ -62,7 +62,7 @@
               reject(error);
             });
         });
-        
+
       },
       mine: function () {
         var query = itemsRef.orderByChild('manager_id').equalTo(Auth.$getAuth().uid);
