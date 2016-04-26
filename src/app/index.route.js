@@ -136,9 +136,36 @@
         url: '/name',
         templateUrl: 'app/companies/tmpl.detail.name.html',
         data: {
-          title: 'Your Company - Edit: Company'
+          title: 'Your Company - Edit: Name'
         }
-
+      })
+      .state('li.account.company.phone', {
+        url: '/phone',
+        templateUrl: 'app/companies/tmpl.detail.phone.html',
+        data: {
+          title: 'Your Company - Edit: Phone'
+        }
+      })
+      .state('li.account.company.fid', {
+        url: '/fid',
+        templateUrl: 'app/companies/tmpl.detail.fid.html',
+        data: {
+          title: 'Your Company - Edit: Federal Tax ID'
+        }
+      })
+      .state('li.account.company.sid', {
+        url: '/sid',
+        templateUrl: 'app/companies/tmpl.detail.sid.html',
+        data: {
+          title: 'Your Company - Edit: State Tax ID'
+        }
+      })
+      .state('li.account.company.address', {
+        url: '/address',
+        templateUrl: 'app/companies/tmpl.detail.address.html',
+        data: {
+          title: 'Your Company - Edit: Address'
+        }
       })
       .state('li.notifications', {
         url: '/notifications',
