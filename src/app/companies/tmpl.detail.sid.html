@@ -68,6 +68,13 @@
       </md-list>
     </md-card>
 
+    <div layout="row" ng-show="$state.params.action === 'create'">
+      <span flex></span>
+      <md-button class="md-primary" ng-click="$state.go('li.account.company.address')">
+        Skip this for now &rarr;
+      </md-button>
+    </div>
+
     <md-card class="margin-top-20" ng-hide="$state.params.action === 'create'">
       <md-list style="padding: 0px">
         <md-list-item ng-click="$state.go('li.account.company.address', {id: CompanyDetailCtrl.company.$id })" class="md-long-text">
