@@ -126,7 +126,7 @@
         }
       })
       .state('li.account.company', {
-        url: '/:id',
+        url: '/:id?action',
         template: '<ui-view />',
         controller: 'CompanyDetailController',
         controllerAs: 'CompanyDetailCtrl',

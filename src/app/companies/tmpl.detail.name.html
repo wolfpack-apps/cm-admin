@@ -18,7 +18,7 @@
                 <input ng-model="CompanyDetailCtrl.company.name" >
               </md-input-container>
             </div>
-            <md-button class="md-secondary md-icon-button md-raised md-primary" ng-click="CompanyDetailCtrl.saveCompany('li.account')">
+            <md-button class="md-secondary md-icon-button md-raised md-primary" ng-click="CompanyDetailCtrl.saveCompany('li.account', 'li.account.company.phone')">
               <md-icon>check</md-icon>
             </md-button>
           </div>
@@ -27,7 +27,7 @@
       </md-list>
     </md-card>
 
-    <md-card class="margin-top-20">
+    <md-card class="margin-top-20" ng-hide="$state.params.action == 'create'">
       <md-list style="padding: 0px">
         <md-list-item ng-click="$state.go('li.account.company.phone', {id: CompanyDetailCtrl.company.$id })" class="md-long-text">
           <div flex="35">

@@ -2,7 +2,7 @@
 <div layout="row">
   <div flex="40" class="margin-right-15">
     <p class="md-body-1">
-      This should be the phone number for the main line at the company office. 
+      This should be the phone number for the main line at the company office.
     </p>
   </div><!-- flex 40 -->
   <div flex>
@@ -35,7 +35,7 @@
                 <input ng-model="CompanyDetailCtrl.company.phone" >
               </md-input-container>
             </div>
-            <md-button class="md-secondary md-icon-button md-raised md-primary" ng-click="CompanyDetailCtrl.saveCompany('li.account')">
+            <md-button class="md-secondary md-icon-button md-raised md-primary" ng-click="CompanyDetailCtrl.saveCompany('li.account', 'li.account.company.fid')">
               <md-icon>check</md-icon>
             </md-button>
           </div>
@@ -44,7 +44,7 @@
       </md-list>
     </md-card>
 
-    <md-card class="margin-top-20">
+    <md-card class="margin-top-20" ng-hide="$state.params.action === 'create'">
       <md-list style="padding: 0px">
         <md-list-item ng-click="$state.go('li.account.company.fid', {id: CompanyDetailCtrl.company.$id })" class="md-long-text">
           <div flex="35">

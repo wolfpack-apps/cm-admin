@@ -10,6 +10,7 @@
 
     var vm = this;
     vm.me = CurrentAuth;
+    $log.log($state.params)
 
     Company
       .get($state.params.id)
@@ -22,11 +23,15 @@
      * Functions
      */
 
-    vm.saveCompany = function (route) {
+    vm.saveCompany = function (route, createRoute) {
       vm.company
         .$save()
         .then(function (ref) {
-          $state.go(route)
+          if ($state.params.action === 'create') {
+            $state.go(createRoute)
+          } else {
+            $state.go(route)
+          }
         });
     }
   }

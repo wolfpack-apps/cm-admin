@@ -2,7 +2,7 @@
 <div layout="row">
   <div flex="40" class="margin-right-15">
     <p class="md-body-1">
-      This is your federal tax id number, also referred to as an EIN. Eventually we will use this to send a form 1099 to your coaches. You can leave this blank if you don't have an EIN. 
+      This is your federal tax id number, also referred to as an EIN. Eventually we will use this to send a form 1099 to your coaches. You can leave this blank if you don't have an EIN.
     </p>
   </div><!-- flex 40 -->
   <div flex>
@@ -47,7 +47,7 @@
                 <input ng-model="CompanyDetailCtrl.company.tax_id_federal" >
               </md-input-container>
             </div>
-            <md-button class="md-secondary md-icon-button md-raised md-primary" ng-click="CompanyDetailCtrl.saveCompany('li.account')">
+            <md-button class="md-secondary md-icon-button md-raised md-primary" ng-click="CompanyDetailCtrl.saveCompany('li.account', 'li.account.company.sid')">
               <md-icon>check</md-icon>
             </md-button>
           </div>
@@ -56,7 +56,7 @@
       </md-list>
     </md-card>
 
-    <md-card class="margin-top-20">
+    <md-card class="margin-top-20" ng-hide="$state.params.action === 'create'">
       <md-list style="padding: 0px">
         <md-list-item ng-click="$state.go('li.account.company.sid', {id: CompanyDetailCtrl.company.$id })" class="md-long-text">
           <div flex="35">

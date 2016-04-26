@@ -47,7 +47,7 @@
         .then(function (newCompany) {
           vm.manager.companies.push(newCompany.key());
           vm.manager.$save().then(function () {
-            $state.go('li.account.company.name', {id: newCompany.key()});
+            $state.go('li.account.company.name', {id: newCompany.key(), action: 'create' });
           })
         });
     }
