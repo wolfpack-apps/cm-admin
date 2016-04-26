@@ -6,7 +6,7 @@
     .controller('AccountDetailController', AccountDetailController);
 
   /** @ngInject */
-  function AccountDetailController ($log, $scope, $state, $mdSidenav, CurrentAuth, Manager) {
+  function AccountDetailController ($log, $scope, $state, $mdSidenav, CurrentAuth, Manager, Company) {
 
     var vm = this;
     vm.me = CurrentAuth;
@@ -20,6 +20,15 @@
         vm.manager = managerData;
       });
 
+    Company
+      .mine()
+      .$loaded()
+      .then(function (companyData) {
+        vm.companies = companyData;
+      }, function (error) {
+        $log.error(error);
+      });
+
     /*
      * Functions
      */
@@ -29,7 +38,18 @@
         .$save()
         .then(function (ref) {
           $state.go(route)
-        })
+        });
+    }
+
+    vm.createCompany = function () {
+      vm.companies
+        .$add({'manager_id': vm.me.uid})
+        .then(function (newCompany) {
+          vm.manager.companies.push(newCompany.key());
+          vm.manager.$save().then(function () {
+            $state.go('li.account.company.name', {id: newCompany.key(), action: 'create' });
+          })
+        });
     }
 
     vm.range = function (num) {
