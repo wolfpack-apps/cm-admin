@@ -206,12 +206,21 @@
         }
       })
       .state('li.teams.detail', {
-        url: '/:id',
+        url: '/:id?action',
         templateUrl: 'app/teams/tmpl.detail.html',
         controller: 'TeamDetailController',
         controllerAs: 'TeamDetailCtrl',
         data: {
           title: 'Team Detail'
+        }
+      })
+      .state('li.teams.detail.name', {
+        url: '/name',
+        templateUrl: 'app/teams/tmpl.detail.name.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Name'
         }
       })
       .state('li.players', {
