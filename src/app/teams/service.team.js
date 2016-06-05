@@ -27,7 +27,7 @@
         'u2idysoc': true,
         'd2xoedco': true
       ],
-      games: [
+      games: [ // empty array if no games
         'oijdp3dok': true,
         'cjlwkc;ec': true
       ]
@@ -37,7 +37,8 @@
     var Team = $firebaseObject.$extend({
       $$defaults: {
         coaches: new Array(),
-        players: new Array()
+        players: new Array(),
+        games: new Array()
       }
     })
 
@@ -77,22 +78,22 @@
         // TODO: What if the user is a player?
 
       },
-      getAllByState: function (state) {
-        // TODO: Restrict to superadmin only
-
-        var query = itemsRef.orderByChild('address_state').equalTo(state);
-        return $firebaseArray(query);
-      },
-      getAllByZip: function (zip) {
-        // TODO: Restrict to super admin only
-        var query = itemsRef.orderByChild('address_zip').equalTo(zip);
-        return;
-      },
-      getAllByDistance: function (address) {
-        // TODO: geocode the address and do something
-        // TODO: restrict to superadmin only
-        return;
-      }
+      // getAllByState: function (state) {
+      //   // TODO: Restrict to superadmin only
+      //
+      //   var query = itemsRef.orderByChild('address_state').equalTo(state);
+      //   return $firebaseArray(query);
+      // },
+      // getAllByZip: function (zip) {
+      //   // TODO: Restrict to super admin only
+      //   var query = itemsRef.orderByChild('address_zip').equalTo(zip);
+      //   return;
+      // },
+      // getAllByDistance: function (address) {
+      //   // TODO: geocode the address and do something
+      //   // TODO: restrict to superadmin only
+      //   return;
+      // }
 
     };
 
