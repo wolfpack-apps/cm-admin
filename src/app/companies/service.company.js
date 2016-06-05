@@ -24,9 +24,13 @@
       address_zip: '48307',
       address_lat: '90283092', // not now
       address_long: '9832394-', // not now
-      teams: [ // empty array if empty
+      teams: [ // empty array if no coaches
         'hd3ocp3k3': true,
         'ceh03cc3s': true
+      ],
+      coaches: [ // empty array if no coaches
+        'oi3ducw': true,
+        'cheicep'; true
       ]
 
     }
