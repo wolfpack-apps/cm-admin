@@ -44,24 +44,34 @@
 
     <md-card class="margin-top-20" ng-hide="$state.params.action == 'create'">
       <md-list class="pad-0">
-        <md-list-item layout="row" ng-click="$state.go('li.account')">
+        <md-list-item layout="row" ng-click="$state.go('li.teams.detail.gender')">
           <div flex="35">
-            <p class="md-body-2">Sex:</p>
+            <p class="md-body-2">Gender:</p>
           </div>
           <div flex>
-            <p class="md-body-1">Boys</p>
+            <p class="md-body-1">{{ TeamDetailCtrl.team.gender | capitalize }}</p>
           </div>
           <md-icon>chevron_right</md-icon>
           <md-divider></md-divider>
         </md-list-item>
-        <md-list-item layout="row" ng-click="$state.go('li.account')">
+        <md-list-item layout="row" ng-click="$state.go('li.teams.detail.sport')">
+          <div flex="35">
+            <p class="md-body-2">Sport:</p>
+          </div>
+          <div flex>
+            <p class="md-body-1">{{ TeamDetailCtrl.team.sport | capitalize }}</p>
+          </div>
+          <md-icon>chevron_right</md-icon>
+          <md-divider></md-divider>
+        </md-list-item>
+        <md-list-item layout="row" ng-click="$state.go('li.teams.detail.address')">
           <div flex="35">
             <p class="md-body-2">Address:</p>
           </div>
           <div flex>
             <p class="md-body-1">
-              169 Saxon Ct<br>
-              Rochester Hills, MI
+              {{ TeamDetailCtrl.team.address_street }} {{ TeamDetailCtrl.team.address_street_2 }}<br>
+              {{ TeamDetailCtrl.team.address_city }}, {{ TeamDetailCtrl.team.address_state }} {{ TeamDetailCtrl.team.address_zip }}
             </p>
           </div>
           <md-icon>chevron_right</md-icon>
