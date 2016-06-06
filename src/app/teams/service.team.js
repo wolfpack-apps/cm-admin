@@ -8,7 +8,7 @@
   /** @ngInject */
   function Team (FIREBASE_URL, $firebaseAuth, $firebaseArray, $firebaseObject, $q, Auth, Manager) {
 
-    var itemsRef = new Firebase(FIREBASE_URL + '/companies');
+    var itemsRef = new Firebase(FIREBASE_URL + '/teams');
 
     /* example of a team object
     {
@@ -49,6 +49,17 @@
         return $firebaseObject(itemsRef.child(teamId));
       },
 
+      getAllByCompany: function (companyId) {
+        // if the logged in user is a manager
+        // return the manager's teams
+        var query = itemsRef.orderByChild('company_id').equalTo(companyId);
+        return $firebaseArray(query);
+
+        // TODO: What if the logged in user is a coach?
+        // TODO: What if the user is a player?
+
+      },
+
       // return Array
       all: function () {
 
@@ -68,16 +79,7 @@
         });
 
       },
-      mine: function () {
-        // if the logged in user is a manager
-        // return the manager's teams
-        var query = itemsRef.orderByChild('manager_id').equalTo(Auth.$getAuth().uid);
-        return $firebaseArray(query);
 
-        // TODO: What if the logged in user is a coach?
-        // TODO: What if the user is a player?
-
-      },
       // getAllByState: function (state) {
       //   // TODO: Restrict to superadmin only
       //

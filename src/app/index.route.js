@@ -69,6 +69,12 @@
           "CurrentAuth": ["Auth", function(Auth) {
             // $requireAuth returns a promise so the resolve waits for it to complete
             return Auth.$requireAuth();
+          }],
+          "CurrentManager": ["Manager", function (Manager) {
+            return Manager.$loaded();
+          }],
+          "CurrentCompany": ["Company", "CurrentManager", function (Company, CurrentManager) {
+            return Company.get(CurrentManager.companies[0]).$loaded();
           }]
         },
         url: '/+',
