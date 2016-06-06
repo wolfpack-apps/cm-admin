@@ -79,22 +79,37 @@
 
         <md-card ng-if="TeamIndexCtrl.teams.length > 0">
           <md-list style="padding: 0px;">
+            <md-list-item class="md-2-line" ng-click="TeamIndexCtrl.createTeam()">
+              <md-icon class="md-avatar-icon md-primary">note_add</md-icon>
+              <div class="md-list-item-text">
+                <h3>
+                  <strong>Create a new team.</strong>
+                </h3>
+                <md-icon class="md-secondary">chevron_right</md-icon>
+              </div>
+            </md-list-item>
+          </md-list>
+        </md-card>
+
+        <md-card class="margin-top-20" ng-if="TeamIndexCtrl.teams.length > 0">
+          <md-list style="padding: 0px;">
             <md-list-item class="md-2-line" ng-repeat="team in TeamIndexCtrl.teams" ng-click="$state.go('li.teams.detail', {id: team.$id })">
-              <img class="md-avatar" ng-src="http://placehold.it/100x100/2196F3/ffffff?text=U15">
+              <md-icon ng-if="!team.sex && !team.age" class="md-avatar-icon md-warn">warning</md-icon>
+              <img ng-if="team.sex === 'male' && team.age" class="md-avatar" ng-src="http://placehold.it/100x100/2196F3/ffffff?text=U{{ team.age }}">
+              <img ng-if="team.sex === 'female' && team.age" class="md-avatar" ng-src="http://placehold.it/100x100/E91E63/ffffff?text=U{{ team.age }}">
+
               <div class="md-list-item-text">
 
                 <h3 ng-if="team.name">{{ team.name }}</h3>
-                <h3 ng-if="!team.name">Team Name Missing</h3>
+                <h3 ng-if="!team.name">Team Details Missing</h3>
                 <p ng-if="team.head_coach">
                   Head coach: {{ team.head_coach }}
-                </p>
-                <p ng-if="!team.head_coach">
-                  Head coach: n/a
                 </p>
                 <md-icon class="md-secondary">chevron_right</md-icon>
               </div>
               <md-divider></md-divider>
-            </md-list-item>            
+            </md-list-item>
+
           </md-list>
         </md-card>
 

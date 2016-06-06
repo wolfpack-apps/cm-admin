@@ -9,12 +9,12 @@
     <div flex>
       <md-card>
         <md-list style="padding: 0px;">
-          <md-list-item layout="row" ng-click="$state.go('li.account')">
+          <md-list-item layout="row" ng-click="$state.go('li.teams.detail.name', {id: TeamDetailCtrl.team.$id })">
             <div flex="35">
               <p class="md-body-2">Name:</p>
             </div>
             <div flex>
-              <p class="md-body-1">The Warriors</p>
+              <p class="md-body-1">{{ TeamDetailCtrl.team.name }}</p>
             </div>
             <md-icon>chevron_right</md-icon>
             <md-divider></md-divider>
