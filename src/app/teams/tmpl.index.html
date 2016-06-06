@@ -94,7 +94,12 @@
         <md-card class="margin-top-20" ng-if="TeamIndexCtrl.teams.length > 0">
           <md-list style="padding: 0px;">
             <md-list-item class="md-2-line" ng-repeat="team in TeamIndexCtrl.teams" ng-click="$state.go('li.teams.detail', {id: team.$id })">
-              <md-icon ng-if="!team.sex && !team.age" class="md-avatar-icon md-warn">warning</md-icon>
+              <md-icon ng-if="!team.sex && !team.age" class="md-avatar-icon md-warn">
+                <md-tooltip md-direction="top">
+                  Team details missing
+                </md-tooltip>
+                warning
+              </md-icon>
               <img ng-if="team.sex === 'male' && team.age" class="md-avatar" ng-src="http://placehold.it/100x100/2196F3/ffffff?text=U{{ team.age }}">
               <img ng-if="team.sex === 'female' && team.age" class="md-avatar" ng-src="http://placehold.it/100x100/E91E63/ffffff?text=U{{ team.age }}">
 

@@ -18,7 +18,7 @@
       sport: 'soccer',
       registration_fee: '1200',
       address_city: 'Rochester Hills',
-      company_id: '25d77da1-398f-4519-be47-4ccfb99de0a6',
+      company_id: '-hcwkho332djn_di',
       coaches: [ // empty array if no coaches
         'hd3ocp3k3': true,
         'ceh03cc3s': true

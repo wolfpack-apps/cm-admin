@@ -229,6 +229,42 @@
           title: 'Team Detail - Edit: Name'
         }
       })
+      .state('li.teams.detail.age', {
+        url: '/age',
+        templateUrl: 'app/teams/tmpl.detail.age.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Age Group'
+        }
+      })
+      .state('li.teams.detail.gender', {
+        url: '/gender',
+        templateUrl: 'app/teams/tmpl.detail.gender.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Team Gender'
+        }
+      })
+      .state('li.teams.detail.sport', {
+        url: '/sport',
+        templateUrl: 'app/teams/tmpl.detail.sport.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Team Sport'
+        }
+      })
+      .state('li.teams.detail.address', {
+        url: '/address',
+        templateUrl: 'app/teams/tmpl.detail.address.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Team Sport'
+        }
+      })
       .state('li.players', {
         url: '/players',
         templateUrl: 'app/players/tmpl.index.html',
