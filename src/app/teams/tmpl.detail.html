@@ -79,22 +79,22 @@
     <div flex>
       <md-card>
         <md-list class="pad-0">
-          <md-list-item layout="row" ng-click="$state.go('li.account')">
+          <md-list-item layout="row" ng-click="$state.go('li.teams.detail.fee')">
             <div flex="35">
               <p class="md-body-2">Registration fee:</p>
             </div>
             <div flex>
-              <p class="md-body-1">$1,200</p>
+              <p class="md-body-1">{{ TeamDetailCtrl.team.fee | currency}}</p>
             </div>
             <md-icon>chevron_right</md-icon>
             <md-divider></md-divider>
           </md-list-item>
-          <md-list-item layout="row" ng-click="$state.go('li.account')">
+          <md-list-item layout="row" ng-click="$state.go('li.teams.detail.options')">
             <div flex="35">
               <p class="md-body-2">Payment options:</p>
             </div>
             <div flex>
-              <p class="md-body-1">1-3 Payments</p>
+              <p class="md-body-1">1-{{ TeamDetailCtrl.team.max_payments }} Payments</p>
             </div>
             <md-icon>chevron_right</md-icon>
             <md-divider></md-divider>

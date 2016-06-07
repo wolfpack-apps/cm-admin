@@ -265,6 +265,24 @@
           title: 'Team Detail - Edit: Team Sport'
         }
       })
+      .state('li.teams.detail.fee', {
+        url: '/fee',
+        templateUrl: 'app/teams/tmpl.detail.fee.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Payment Options'
+        }
+      })
+      .state('li.teams.detail.options', {
+        url: '/options',
+        templateUrl: 'app/teams/tmpl.detail.options.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Registration Fee'
+        }
+      })
       .state('li.players', {
         url: '/players',
         templateUrl: 'app/players/tmpl.index.html',
