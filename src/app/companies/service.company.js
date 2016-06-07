@@ -6,7 +6,7 @@
     .factory('Company', Company);
 
   /** @ngInject */
-  function Company (FIREBASE_URL, $firebaseAuth, $firebaseArray, $firebaseObject, $q, Auth, Manager) {
+  function Company ($log, FIREBASE_URL, $firebaseAuth, $firebaseArray, $firebaseObject, $q, Auth, Manager) {
 
     var itemsRef = new Firebase(FIREBASE_URL + '/companies');
 
@@ -40,13 +40,24 @@
       $$defaults: {
         teams: new Array()
       }
-    })
+    });
+
+    var Companies = $firebaseArray.$extend({
+      $$defaults: {
+        teams: new Array()
+      }
+    });
 
     return {
 
       // return Object
       get: function (companyId) {
-        return $firebaseObject(itemsRef.child(companyId));
+        return Company(itemsRef.child(companyId));
+      },
+      // return Object
+      mine: function () {
+        var query = itemsRef.orderByChild('manager_id').equalTo(Auth.$getAuth().uid);
+        return Companies(query);
       },
 
       // return Array
@@ -58,7 +69,7 @@
             .$loaded()
             .then(function (managerData) {
               if (managerData.superadmin) {
-                resolve($firebaseArray(itemsRef));
+                resolve(Companies(itemsRef));
               } else {
                 reject(new Error('Permission denied. Superadmin only.'));
               }
@@ -68,13 +79,9 @@
         });
 
       },
-      mine: function () {
-        var query = itemsRef.orderByChild('manager_id').equalTo(Auth.$getAuth().uid);
-        return $firebaseArray(query);
-      },
       getByState: function (state) {
         var query = itemsRef.orderByChild('address_state').equalTo(state);
-        return $firebaseArray(query);
+        return Companies(query);
       },
       getByZip: function (zip) {
         var query = itemsRef.orderByChild('address_zip').equalTo(zip);

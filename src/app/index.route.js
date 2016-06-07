@@ -69,6 +69,12 @@
           "CurrentAuth": ["Auth", function(Auth) {
             // $requireAuth returns a promise so the resolve waits for it to complete
             return Auth.$requireAuth();
+          }],
+          "CurrentManager": ["Manager", function (Manager) {
+            return Manager.$loaded();
+          }],
+          "CurrentCompany": ["Company", "CurrentManager", function (Company, CurrentManager) {
+            return Company.get(CurrentManager.companies[0]).$loaded();
           }]
         },
         url: '/+',
@@ -206,12 +212,75 @@
         }
       })
       .state('li.teams.detail', {
-        url: '/:id',
+        url: '/:id?action',
         templateUrl: 'app/teams/tmpl.detail.html',
         controller: 'TeamDetailController',
         controllerAs: 'TeamDetailCtrl',
         data: {
           title: 'Team Detail'
+        }
+      })
+      .state('li.teams.detail.name', {
+        url: '/name',
+        templateUrl: 'app/teams/tmpl.detail.name.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Name'
+        }
+      })
+      .state('li.teams.detail.age', {
+        url: '/age',
+        templateUrl: 'app/teams/tmpl.detail.age.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Age Group'
+        }
+      })
+      .state('li.teams.detail.gender', {
+        url: '/gender',
+        templateUrl: 'app/teams/tmpl.detail.gender.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Team Gender'
+        }
+      })
+      .state('li.teams.detail.sport', {
+        url: '/sport',
+        templateUrl: 'app/teams/tmpl.detail.sport.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Team Sport'
+        }
+      })
+      .state('li.teams.detail.address', {
+        url: '/address',
+        templateUrl: 'app/teams/tmpl.detail.address.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Team Sport'
+        }
+      })
+      .state('li.teams.detail.fee', {
+        url: '/fee',
+        templateUrl: 'app/teams/tmpl.detail.fee.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Payment Options'
+        }
+      })
+      .state('li.teams.detail.options', {
+        url: '/options',
+        templateUrl: 'app/teams/tmpl.detail.options.html',
+        controller: 'TeamDetailController',
+        controllerAs: 'TeamDetailCtrl',
+        data: {
+          title: 'Team Detail - Edit: Registration Fee'
         }
       })
       .state('li.players', {
