@@ -11,12 +11,14 @@
     var itemsRef = new Firebase(FIREBASE_URL + '/coaches');
     var Coach = $firebaseObject.$extend({
       $$defaults: {
-        teams: new Array()
+        teams: new Array(),
+        companies: new Array()
       }
     });
     var Coaches = $firebaseArray.$extend({
       $$defaults: {
-        teams: new Array()
+        teams: new Array(),
+        companies: new Array()
       }
     })
 
@@ -35,16 +37,35 @@
       teams: [ // false if no teams
         '29c8cuc2u0c-0c3': true,
         'u20e9c-e2ic3': true
+      ],
+      companies: [ // false if no company (impossible)
+        '29c8cuc2u0c-0c3': true,
+        'u20e9c-e2ic3': true
+      ],
+      payments: [ // false if no payments yet
+        '29c8cuc2u0c-0c3': true,
+        'u20e9c-e2ic3': true
       ]
     }
     */
     return {
+
+      // return Object
       get: function (coachId) {
         return Coach(coachId);
       },
-      getCoachByEmail: function (coachEmail) {
+      // all: function () {
+      //   return Coaches();
+      // },
+
+      // return Array
+      getCoachesByEmail: function (coachEmail) {
         var query = itemsRef.orderByChild('email').equalTo(coachEmail);
-        return Coach(query);
+        return Coaches(query);
+      },
+      // return Array
+      getCoachesByCompany: function (companyId) {
+        var query = itemsRef.orderByChild('companies').equalTo(companyId);
       }
     }
 
