@@ -74,7 +74,11 @@
             return Manager.$loaded();
           }],
           "CurrentCompany": ["Company", "CurrentManager", function (Company, CurrentManager) {
-            return Company.get(CurrentManager.companies[0]).$loaded();
+            if (CurrentManager.companies.length > 0) {
+              return Company.get(CurrentManager.companies[0]).$loaded();
+            } else {
+              return null;
+            }
           }]
         },
         url: '/+',
