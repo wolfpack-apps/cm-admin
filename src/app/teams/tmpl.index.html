@@ -94,7 +94,7 @@
         <md-card class="margin-top-20" ng-if="TeamIndexCtrl.teams.length > 0">
           <md-list style="padding: 0px;">
             <md-list-item class="md-2-line" ng-repeat="team in TeamIndexCtrl.teams" ng-click="$state.go('li.teams.detail', {id: team.$id })">
-              <md-icon ng-if="!team.sex && !team.age" class="md-avatar-icon md-warn">
+              <md-icon ng-if="!team.sex && !team.age" class="md-warn">
                 <md-tooltip md-direction="top">
                   Team details missing
                 </md-tooltip>
