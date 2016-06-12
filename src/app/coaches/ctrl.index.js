@@ -11,6 +11,23 @@
     var vm = this;
     vm.data = $state.current.data;
 
+    // build a coaches array, with our details
+    vm.coaches = new Array();
+
+    _.forEach(CurrentCompany.coaches, function (coachId) {
+      Coach
+        .get(coachId)
+        .$loaded()
+        .then(function (coachData) {
+          vm.coaches.push(coachData)
+          coachLoaded();
+        });
+    });
+
+    var coachLoaded = _.after(CurrentCompany.coaches.length, function () {
+      // all of our coaches have loaded. Do something.
+    })
+
     // this needs to be turned into a service
     vm.inviteCoach = function(ev) {
       // Appending dialog to document.body to cover sidenav in docs app
@@ -32,16 +49,14 @@
           password: Helper.randomString(12)
         })
         .then(function (authData) {
-          $log.log(authData);
           // create a new Coach
           Coach
             .get(authData.uid)
             .$loaded()
             .then(function (coachData) {
               coachData.status = "invited";
+              coachData.email = result;
               coachData.companies.push(CurrentCompany.$id);
-              $log.log(coachData);
-              debugger;
               CurrentCompany.coaches.push(coachData.$id);
 
               // save the new coach id to the company array

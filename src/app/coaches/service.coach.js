@@ -61,13 +61,30 @@
       // },
 
       // return Array
-      getCoachesByEmail: function (coachEmail) {
+      getByEmail: function (coachEmail) {
         var query = itemsRef.orderByChild('email').equalTo(coachEmail);
         return Coaches(query);
       },
       // return Array
-      getCoachesByCompany: function (companyId) {
+      // for some reason this is not as elegant as we would like
+      getByCompany: function (companyId) {
         var query = itemsRef.orderByChild('companies').equalTo(companyId);
+        return Coaches(query);
+      },
+      // accept an array of keys, and returns an array of enriched data
+      // getByCompanyArray: function (companyDataArray) {
+      //   if (Array.isArray(companyDataArray)) {
+      //     var companyEnrichedArray = new Array();
+      //     _.forEach(companyDataArray, function (value) {
+      //
+      //     })
+      //     return companyEnrichedArray;
+      //   } else {
+      //     console.log('companyDataArray needs to be of type array. Got ' + typeof companyDataArray);
+      //   }
+      // },
+      all: function () {
+        return Coaches(itemsRef);
       }
     }
 
