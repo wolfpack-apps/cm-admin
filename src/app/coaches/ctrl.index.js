@@ -6,7 +6,7 @@
     .controller('CoachIndexController', CoachIndexController);
 
   /** @ngInject */
-  function CoachIndexController ($log, $state, $mdSidenav, $mdDialog, Auth, CurrentAuth) {
+  function CoachIndexController ($log, $state, $mdSidenav, $mdDialog, Helper, Auth, CurrentAuth, Coach) {
 
     var vm = this;
     vm.data = $state.current.data;
@@ -25,7 +25,32 @@
         .cancel('Cancel');
 
       $mdDialog.show(confirm).then(function(result) {
-        $log.log('You decided to name your dog ' + result + '.');
+        // create a new account
+        // we might need to validate this as an email
+        Auth.$createUser({
+          email: result,
+          password: Helper.randomString(12)
+        })
+        .then(function (authData) {
+          $log.log(authData);
+          // create a new Coach
+          Coach
+            .get(authData.uid)
+            .$loaded()
+            .then(function (coachData) {
+              coachData.status = "invited";
+              coachData
+                .$save()
+                .then(function (coachData) {
+                  $log.log(coachData);
+                  debugger;
+                  $state.go('li.coaches.detail', {id: coachData.key() });
+                });
+            })
+        })
+        .catch(function (error) {
+          $log.error(error);
+        });
       }, function() {
         $log.log('You didn\'t name your dog.');
       });

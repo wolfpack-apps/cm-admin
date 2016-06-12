@@ -6,7 +6,7 @@
     .factory('Coach', Coach);
 
   /** @ngInject */
-  function Coach (FIREBASE_URL, $firebaseAuth, $firebaseObject, Auth) {
+  function Coach (FIREBASE_URL, $firebaseAuth, $firebaseObject, $firebaseArray, Auth) {
 
     var itemsRef = new Firebase(FIREBASE_URL + '/coaches');
     var Coach = $firebaseObject.$extend({
@@ -52,7 +52,7 @@
 
       // return Object
       get: function (coachId) {
-        return Coach(coachId);
+        return Coach(itemsRef.child(coachId));
       },
       // all: function () {
       //   return Coaches();
