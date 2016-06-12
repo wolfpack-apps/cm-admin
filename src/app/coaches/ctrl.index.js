@@ -6,7 +6,7 @@
     .controller('CoachIndexController', CoachIndexController);
 
   /** @ngInject */
-  function CoachIndexController ($log, $state, $mdSidenav, $mdDialog, Helper, Auth, CurrentAuth, Coach) {
+  function CoachIndexController ($log, $state, $mdSidenav, $mdDialog, Helper, Auth, CurrentAuth, CurrentManager, CurrentCompany, Coach) {
 
     var vm = this;
     vm.data = $state.current.data;
@@ -39,11 +39,21 @@
             .$loaded()
             .then(function (coachData) {
               coachData.status = "invited";
+              coachData.companies.push(CurrentCompany.$id);
+              $log.log(coachData);
+              debugger;
+              CurrentCompany.coaches.push(coachData.$id);
+
+              // save the new coach id to the company array
+              CurrentCompany
+                .$save()
+                .then(function (companyData) {
+                  $log.log('Associated coach with ' + companyData.name);
+                });
+
               coachData
                 .$save()
                 .then(function (coachData) {
-                  $log.log(coachData);
-                  debugger;
                   $state.go('li.coaches.detail', {id: coachData.key() });
                 });
             })

@@ -38,13 +38,15 @@
 
     var Company = $firebaseObject.$extend({
       $$defaults: {
-        teams: new Array()
+        teams: new Array(),
+        coaches: new Array()
       }
     });
 
     var Companies = $firebaseArray.$extend({
       $$defaults: {
-        teams: new Array()
+        teams: new Array(),
+        coaches: new Array()
       }
     });
 
