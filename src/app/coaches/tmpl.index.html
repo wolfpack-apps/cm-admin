@@ -33,7 +33,7 @@
             <md-list-item ng-repeat="coach in CoachIndexCtrl.coaches" class="md-3-line" ng-click="$state.go('li.coaches.detail', {id: coach.$id })">
               <!-- <img class="md-avatar" ng-src="/assets/images/morris.jpg"> -->
               <div class="md-list-item-text">
-                <h3>{{ coach.name }}</h3>
+                <h3>{{ coach.first_name + ' ' + coach.last_name }}</h3>
                 <!-- <md-chips ng-model="ctrl.fruitNames" readonly="ctrl.readonly"></md-chips> -->
                 <p>
                   {{ coach.address_city }}, {{ coach.address_state }}
