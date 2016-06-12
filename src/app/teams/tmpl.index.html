@@ -64,9 +64,9 @@
       <div flex>
 
         <md-card ng-if="TeamIndexCtrl.company.teams == 0">
-          <md-list style="padding: 0px;">
+          <md-list class="pad-0">
             <md-list-item class="md-2-line" ng-click="TeamIndexCtrl.createTeam()">
-              <md-icon class="md-avatar-icon md-warn">warning</md-icon>
+              <md-icon class="md-warn">warning</md-icon>
               <div class="md-list-item-text">
                 <h3>
                   You don't have any teams yet. <strong>Create one now.</strong>
@@ -78,9 +78,9 @@
         </md-card>
 
         <md-card ng-if="TeamIndexCtrl.teams.length > 0">
-          <md-list style="padding: 0px;">
+          <md-list class="pad-0">
             <md-list-item class="md-2-line" ng-click="TeamIndexCtrl.createTeam()">
-              <md-icon class="md-avatar-icon md-primary">note_add</md-icon>
+              <md-icon class="md-primary">note_add</md-icon>
               <div class="md-list-item-text">
                 <h3>
                   <strong>Create a new team.</strong>

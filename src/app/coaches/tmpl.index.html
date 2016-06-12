@@ -13,9 +13,9 @@
       </div>
       <div flex>
         <md-card>
-          <md-list style="padding: 0px;">
-            <md-list-item class="md-2-line" ng-click="CoachIndexCtrl.inviteCoach()">
-              <md-icon class="md-avatar-icon md-warn">warning</md-icon>
+          <md-list class="pad-0">
+            <md-list-item ng-if="CoachIndexCtrl.coaches.length === 0" class="md-2-line" ng-click="CoachIndexCtrl.inviteCoach()">
+              <md-icon class="md-warn">warning</md-icon>
               <div class="md-list-item-text">
                 <h3>
                   You don't have any coaches. <strong>Invite one now.</strong>
@@ -23,13 +23,22 @@
                 <md-icon class="md-secondary">send</md-icon>
               </div>
             </md-list-item>
+
+            <md-list-item ng-if="CoachIndexCtrl.coaches.length > 0" class="md-2-line" ng-click="CoachIndexCtrl.inviteCoach()">
+              <md-icon class="md-primary">person_add</md-icon>
+              <div class="md-list-item-text">
+                <h3>
+                  <strong>Invite a new coach.</strong>
+                </h3>
+                <md-icon class="md-secondary">chevron_right</md-icon>
+              </div>
+            </md-list-item>
+
           </md-list>
         </md-card>
-        <p>
-          Placeholder to show example of teams
-        </p>
-        <md-card>
-          <md-list style="padding: 0px;">
+
+        <md-card class="margin-top-20">
+          <md-list class="pad-0">
             <md-list-item ng-repeat="coach in CoachIndexCtrl.coaches" class="md-3-line" ng-click="$state.go('li.coaches.detail', {id: coach.$id })">
               <!-- <img class="md-avatar" ng-src="/assets/images/morris.jpg"> -->
               <div class="md-list-item-text">
@@ -38,9 +47,9 @@
                 <p>
                   {{ coach.address_city }}, {{ coach.address_state }}
                 </p>
-                <!-- <p>
+                <p>
                   <span class="md-caption">Boys U-18 Black</span>, <span class="md-caption">Boys U-17 Black</span>
-                </p> -->
+                </p>
                 <md-icon class="md-secondary">chevron_right</md-icon>
               </div>
               <md-divider></md-divider>
