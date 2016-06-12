@@ -6,10 +6,34 @@
     .controller('NotificationIndexController', NotificationIndexController);
 
   /** @ngInject */
-  function NotificationIndexController ($state, $mdSidenav, Auth, CurrentAuth) {
+  function NotificationIndexController ($state, $mdSidenav, $mdDialog, Auth, CurrentAuth, CurrentManager) {
 
     var vm = this;
     vm.data = $state.current.data;
+
+    // check if all of the required information is there
+    if (CurrentManager.first_name && CurrentManager.last_name && (CurrentManager.phone_cell || CurrentManager.phone_work) && CurrentManager.address_street && CurrentManager.address_city && CurrentManager.address_state && CurrentManager.address_zip) {
+      vm.account = true;
+    }
+
+    if (CurrentManager.companies.length > 0) {
+      vm.company = true;
+    }
+
+    vm.comingSoon = function(ev) {
+    // Appending dialog to document.body to cover sidenav in docs app
+    // Modal dialogs should fully cover application
+    // to prevent interaction outside of dialog
+    $mdDialog.show(
+      $mdDialog.alert()
+        .clickOutsideToClose(true)
+        .title('This feature is coming soon!')
+        .textContent('We\'re working as hard as possible to make Wolfpack Club Manager a realty. Stay tuned!')
+        .ariaLabel('This feature is coming soon')
+        .ok('Got it!')
+        .targetEvent(ev)
+    );
+  };
 
   }
 

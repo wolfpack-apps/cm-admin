@@ -77,7 +77,7 @@
             if (CurrentManager.companies.length > 0) {
               return Company.get(CurrentManager.companies[0]).$loaded();
             } else {
-              return null;
+              return false;
             }
           }]
         },
