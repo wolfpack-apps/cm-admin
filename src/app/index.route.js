@@ -325,11 +325,39 @@
           title: "Coach Detail"
         }
       })
+      .state('li.coaches.detail.name', {
+        url: '/name',
+        templateUrl: 'app/coaches/tmpl.detail.name.html',
+        data: {
+          title: "Coach Detail - Edit: Name"
+        }
+      })
       .state('li.coaches.detail.email', {
         url: '/email',
         templateUrl: 'app/coaches/tmpl.detail.email.html',
         data: {
           title: "Coach Detail - Edit: Email"
+        }
+      })
+      .state('li.coaches.detail.phone', {
+        url: '/phone',
+        templateUrl: 'app/coaches/tmpl.detail.phone.html',
+        data: {
+          title: "Coach Detail - Edit: Phone Numbers"
+        }
+      })
+      .state('li.coaches.detail.birthday', {
+        url: '/birthday',
+        templateUrl: 'app/coaches/tmpl.detail.birthday.html',
+        data: {
+          title: "Coach Detail - Edit: Birthday"
+        }
+      })
+      .state('li.coaches.detail.address', {
+        url: '/address',
+        templateUrl: 'app/coaches/tmpl.detail.address.html',
+        data: {
+          title: "Coach Detail - Edit: Address"
         }
       });
 

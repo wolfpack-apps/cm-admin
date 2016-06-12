@@ -26,6 +26,7 @@
 
     var coachLoaded = _.after(CurrentCompany.coaches.length, function () {
       // all of our coaches have loaded. Do something.
+      $log.log(vm.coaches);
     })
 
     // this needs to be turned into a service
