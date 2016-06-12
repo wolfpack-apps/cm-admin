@@ -324,6 +324,13 @@
         data: {
           title: "Coach Detail"
         }
+      })
+      .state('li.coaches.detail.email', {
+        url: '/email',
+        templateUrl: 'app/coaches/tmpl.detail.email.html',
+        data: {
+          title: "Coach Detail - Edit: Email"
+        }
       });
 
     $urlRouterProvider.otherwise('/');
