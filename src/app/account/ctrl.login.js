@@ -17,7 +17,7 @@
         //    user_id: authData.uid,
         //    email: authData.password.email,
         // });
-        $state.go('li.payments');
+        $state.go('li.notifications');
       })
       .catch( function (error) {
         $log.error('Error: ' + error);

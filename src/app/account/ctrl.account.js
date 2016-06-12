@@ -6,10 +6,15 @@
     .controller('AccountController', AccountController);
 
   /** @ngInject */
-  function AccountController ($state, $log, $mdSidenav, Auth, CurrentAuth) {
+  function AccountController ($state, $log, $mdSidenav, Auth, CurrentAuth, CurrentManager, CurrentCompany) {
 
     var vm = this;
     vm.me = CurrentAuth;
+    if (CurrentCompany) {
+      vm.hasCompany = true;
+    } else {
+      vm.hasCompany = false;
+    }
 
     /*
      * Functions

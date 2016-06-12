@@ -11,7 +11,7 @@
         <md-card>
           <md-list class="pad-0">
             <md-list-item class="md-2-line" ng-click="$state.go('li.account')">
-              <md-checkbox ng-model="message.selected"></md-checkbox>
+              <md-checkbox ng-model="NotificationIndexCtrl.account"></md-checkbox>
               <div class="md-list-item-text" layout="column">
                 <h3>Fill in your account details</h3>
                 <md-icon class="md-secondary">chevron_right</md-icon>
@@ -19,6 +19,25 @@
               <md-divider></md-divider>
             </md-list-item>
             <md-list-item class="md-2-line" ng-click="$state.go('li.account')">
+              <md-checkbox ng-model="NotificationIndexCtrl.company"></md-checkbox>
+              <div class="md-list-item-text" layout="column">
+                <h3>Add a company to your account</h3>
+                <md-icon class="md-secondary">chevron_right</md-icon>
+              </div>
+              <md-divider></md-divider>
+            </md-list-item>
+            <md-list-item class="md-2-line">
+              <md-checkbox ng-model="NotificationIndexCtrl.bank" ng-click="NotificationIndexCtrl.comingSoon()"></md-checkbox>
+              <div class="md-list-item-text" layout="column">
+                <h3>Connect your bank account</h3>
+                <p>
+                  Disabled until a later release
+                </p>
+                <md-icon class="md-secondary">chevron_right</md-icon>
+              </div>
+              <md-divider></md-divider>
+            </md-list-item>
+            <md-list-item ng-if="CurrentCompany" class="md-2-line" ng-click="$state.go('li.account')">
               <md-checkbox ng-model="message.selected"></md-checkbox>
               <div class="md-list-item-text" layout="column">
                 <h3>Add your first team</h3>
@@ -26,7 +45,7 @@
               </div>
               <md-divider></md-divider>
             </md-list-item>
-            <md-list-item class="md-2-line" ng-click="$state.go('li.account')">
+            <md-list-item ng-if="CurrentCompany" class="md-2-line" ng-click="$state.go('li.account')">
               <md-checkbox ng-model="message.selected"></md-checkbox>
               <div class="md-list-item-text" layout="column">
                 <h3>Invite your first players</h3>
@@ -34,18 +53,10 @@
               </div>
               <md-divider></md-divider>
             </md-list-item>
-            <md-list-item class="md-2-line" ng-click="$state.go('li.account')">
+            <md-list-item ng-if="CurrentCompany" class="md-2-line" ng-click="$state.go('li.account')">
               <md-checkbox ng-model="message.selected"></md-checkbox>
               <div class="md-list-item-text" layout="column">
                 <h3>Invite your coaches</h3>
-                <md-icon class="md-secondary">chevron_right</md-icon>
-              </div>
-              <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="md-2-line" ng-click="$state.go('li.account')">
-              <md-checkbox ng-model="message.selected"></md-checkbox>
-              <div class="md-list-item-text" layout="column">
-                <h3>Connect your bank account</h3>
                 <md-icon class="md-secondary">chevron_right</md-icon>
               </div>
               <md-divider></md-divider>
