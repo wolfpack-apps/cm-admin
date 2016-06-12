@@ -12,13 +12,15 @@
     var Coach = $firebaseObject.$extend({
       $$defaults: {
         teams: new Array(),
-        companies: new Array()
+        companies: new Array(),
+        payments: new Array()
       }
     });
     var Coaches = $firebaseArray.$extend({
       $$defaults: {
         teams: new Array(),
-        companies: new Array()
+        companies: new Array(),
+        payments: new Array()
       }
     })
 
