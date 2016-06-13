@@ -37,7 +37,7 @@
       vm.manager
         .$save()
         .then(function (ref) {
-          $state.go(route)
+          $state.go(route, {}, {reload: true})
         });
     }
 
