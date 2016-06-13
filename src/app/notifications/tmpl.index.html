@@ -37,26 +37,27 @@
               </div>
               <md-divider></md-divider>
             </md-list-item>
-            <md-list-item ng-if="CurrentCompany" class="md-2-line" ng-click="$state.go('li.account')">
-              <md-checkbox ng-model="message.selected"></md-checkbox>
+
+            <md-list-item ng-if="AccountCtrl.hasCompany" class="md-2-line" ng-click="$state.go('li.teams')">
+              <md-checkbox ng-model="NotificationIndexCtrl.teams"></md-checkbox>
               <div class="md-list-item-text" layout="column">
                 <h3>Add your first team</h3>
                 <md-icon class="md-secondary">chevron_right</md-icon>
               </div>
               <md-divider></md-divider>
             </md-list-item>
-            <md-list-item ng-if="CurrentCompany" class="md-2-line" ng-click="$state.go('li.account')">
-              <md-checkbox ng-model="message.selected"></md-checkbox>
+            <md-list-item ng-if="AccountCtrl.hasCompany" class="md-2-line" ng-click="$state.go('li.coaches')">
+              <md-checkbox ng-model="NotificationIndexCtrl.coaches"></md-checkbox>
               <div class="md-list-item-text" layout="column">
-                <h3>Invite your first players</h3>
+                <h3>Invite your coaches</h3>
                 <md-icon class="md-secondary">chevron_right</md-icon>
               </div>
               <md-divider></md-divider>
             </md-list-item>
-            <md-list-item ng-if="CurrentCompany" class="md-2-line" ng-click="$state.go('li.account')">
-              <md-checkbox ng-model="message.selected"></md-checkbox>
+            <md-list-item ng-if="AccountCtrl.hasCompany" class="md-2-line" ng-click="$state.go('li.players')">
+              <md-checkbox ng-model="NotificationIndexCtrl.players"></md-checkbox>
               <div class="md-list-item-text" layout="column">
-                <h3>Invite your coaches</h3>
+                <h3>Invite your first players</h3>
                 <md-icon class="md-secondary">chevron_right</md-icon>
               </div>
               <md-divider></md-divider>

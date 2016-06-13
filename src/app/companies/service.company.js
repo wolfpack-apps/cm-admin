@@ -30,7 +30,11 @@
       ],
       coaches: [ // empty array if no coaches
         'oi3ducw': true,
-        'cheicep'; true
+        'cheicep': true
+      ],
+      players: [
+        'c2-ohp2c2': true,
+        'cowy0u3e2': true
       ]
 
     }
@@ -39,14 +43,16 @@
     var Company = $firebaseObject.$extend({
       $$defaults: {
         teams: new Array(),
-        coaches: new Array()
+        coaches: new Array(),
+        players: new Array()
       }
     });
 
     var Companies = $firebaseArray.$extend({
       $$defaults: {
         teams: new Array(),
-        coaches: new Array()
+        coaches: new Array(),
+        players: new Array()
       }
     });
 

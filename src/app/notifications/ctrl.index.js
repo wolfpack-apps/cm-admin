@@ -6,7 +6,7 @@
     .controller('NotificationIndexController', NotificationIndexController);
 
   /** @ngInject */
-  function NotificationIndexController ($state, $mdSidenav, $mdDialog, Auth, CurrentAuth, CurrentManager) {
+  function NotificationIndexController ($state, $mdSidenav, $mdDialog, Auth, CurrentAuth, CurrentManager, CurrentCompany) {
 
     var vm = this;
     vm.data = $state.current.data;
@@ -18,6 +18,18 @@
 
     if (CurrentManager.companies.length > 0) {
       vm.company = true;
+    }
+
+    if (CurrentCompany && CurrentCompany.teams.length > 0) {
+      vm.teams = true;
+    }
+
+    if (CurrentCompany && CurrentCompany.coaches.length > 0) {
+      vm.coaches = true;
+    }
+
+    if (CurrentCompany && CurrentCompany.players.length > 0) {
+      vm.players = true;
     }
 
     vm.comingSoon = function(ev) {
