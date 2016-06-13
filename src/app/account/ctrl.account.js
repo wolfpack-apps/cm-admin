@@ -11,9 +11,9 @@
     var vm = this;
     vm.me = CurrentAuth;
     if (CurrentCompany) {
-      $state.current.data.hasCompany = true;
+      vm.hasCompany = true;
     } else {
-      $state.current.data.hasCompany = false;
+      vm.hasCompany = false;
     }
 
     /*

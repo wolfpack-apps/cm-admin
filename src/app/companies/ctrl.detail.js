@@ -28,9 +28,9 @@
         .$save()
         .then(function (ref) {
           if ($state.params.action === 'create') {
-            $state.go(createRoute)
+            $state.go(createRoute, {}, {reload: true})
           } else {
-            $state.go(route)
+            $state.go(route, {}, {reload: true})
           }
         });
     }

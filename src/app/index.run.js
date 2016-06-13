@@ -19,10 +19,6 @@
       }
     });
 
-    $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options) {
-      $log.log($state);
-    });
-
     $rootScope.$state = $state;
 
     $log.debug('runBlock end');
