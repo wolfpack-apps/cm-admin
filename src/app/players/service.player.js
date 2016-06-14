@@ -76,6 +76,7 @@
 
       // return Array
       all: function () {
+        // TODO: check for super admin
         return Players(itemsRef);
       }
     }
