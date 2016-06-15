@@ -11,6 +11,23 @@
     var vm = this;
     vm.data = $state.current.data;
 
+    // build a players array, with our details
+    vm.players = new Array();
+
+    _.forEach(CurrentCompany.players, function (playerId) {
+      Player
+        .get(playerId)
+        .$loaded()
+        .then(function (playerData) {
+          vm.players.push(playerData)
+          playerLoaded();
+        });
+    });
+
+    var playerLoaded = _.after(CurrentCompany.players.length, function () {
+      // all of our coaches have loaded. Do something.
+      $log.log(vm.players);
+    });
 
     // this needs to be turned into a service
     vm.invitePlayer = function(ev) {
