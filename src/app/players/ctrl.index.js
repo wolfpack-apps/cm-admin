@@ -60,7 +60,7 @@
               playerData.companies.push(CurrentCompany.$id);
               CurrentCompany.players.push(playerData.$id);
 
-              // save the new coach id to the company array
+              // save the new player id to the company array
               CurrentCompany
                 .$save()
                 .then(function (playerData) {
