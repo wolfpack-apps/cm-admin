@@ -333,6 +333,15 @@
           title: 'Player Detail - Edit: Player phone'
         }
       })
+      .state('li.players.detail.birthday', {
+        url: '/birthday',
+        templateUrl: 'app/players/tmpl.detail.birthday.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player birthday'
+        }
+      })
       .state('li.coaches', {
         url: '/coaches',
         templateUrl: 'app/coaches/tmpl.index.html',
