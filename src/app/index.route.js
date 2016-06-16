@@ -306,6 +306,60 @@
           title: 'Player Detail'
         }
       })
+      .state('li.players.detail.name', {
+        url: '/name',
+        templateUrl: 'app/players/tmpl.detail.name.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player name'
+        }
+      })
+      .state('li.players.detail.email', {
+        url: '/email',
+        templateUrl: 'app/players/tmpl.detail.email.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player email'
+        }
+      })
+      .state('li.players.detail.phone', {
+        url: '/phone',
+        templateUrl: 'app/players/tmpl.detail.phone.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player phone'
+        }
+      })
+      .state('li.players.detail.birthday', {
+        url: '/birthday',
+        templateUrl: 'app/players/tmpl.detail.birthday.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player birthday'
+        }
+      })
+      .state('li.players.detail.gender', {
+        url: '/gender',
+        templateUrl: 'app/players/tmpl.detail.gender.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player gender'
+        }
+      })
+      .state('li.players.detail.address', {
+        url: '/address',
+        templateUrl: 'app/players/tmpl.detail.address.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player address'
+        }
+      })
       .state('li.coaches', {
         url: '/coaches',
         templateUrl: 'app/coaches/tmpl.index.html',
