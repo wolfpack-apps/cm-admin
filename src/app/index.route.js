@@ -324,6 +324,15 @@
           title: 'Player Detail - Edit: Player email'
         }
       })
+      .state('li.players.detail.phone', {
+        url: '/phone',
+        templateUrl: 'app/players/tmpl.detail.phone.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player phone'
+        }
+      })
       .state('li.coaches', {
         url: '/coaches',
         templateUrl: 'app/coaches/tmpl.index.html',
