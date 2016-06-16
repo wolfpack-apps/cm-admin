@@ -19,7 +19,7 @@
         vm.player = playerData;
       });
 
-    vm.saveCoach = function (route) {
+    vm.savePlayer = function (route) {
       vm.player
         .$save()
         .then(function (ref) {

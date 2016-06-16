@@ -306,6 +306,15 @@
           title: 'Player Detail'
         }
       })
+      .state('li.players.detail.name', {
+        url: '/name',
+        templateUrl: 'app/players/tmpl.detail.name.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player name'
+        }
+      })
       .state('li.coaches', {
         url: '/coaches',
         templateUrl: 'app/coaches/tmpl.index.html',
