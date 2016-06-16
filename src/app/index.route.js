@@ -351,6 +351,15 @@
           title: 'Player Detail - Edit: Player gender'
         }
       })
+      .state('li.players.detail.address', {
+        url: '/address',
+        templateUrl: 'app/players/tmpl.detail.address.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player address'
+        }
+      })
       .state('li.coaches', {
         url: '/coaches',
         templateUrl: 'app/coaches/tmpl.index.html',
