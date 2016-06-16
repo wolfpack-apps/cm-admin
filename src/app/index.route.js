@@ -135,13 +135,22 @@
           title: 'Your Account - Edit: Address'
         }
       })
+      .state('li.account.companies', {
+        url: '/companies',
+        templateUrl: 'app/companies/tmpl.index.html',
+        controller: 'CompanyIndexController',
+        controllerAs: 'CompanyIndexCtrl',
+        data: {
+          title: 'Your companies'
+        }
+      })
       .state('li.account.company', {
-        url: '/company/:id?action',
+        url: '/company/:id',
         templateUrl: 'app/companies/tmpl.detail.html',
         controller: 'CompanyDetailController',
         controllerAs: 'CompanyDetailCtrl',
         data: {
-          titl: 'Your company'
+          title: 'Your company'
         }
       })
       .state('li.account.company.name', {

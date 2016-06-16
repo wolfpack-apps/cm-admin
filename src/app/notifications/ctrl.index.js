@@ -6,7 +6,7 @@
     .controller('NotificationIndexController', NotificationIndexController);
 
   /** @ngInject */
-  function NotificationIndexController ($state, $mdSidenav, $mdDialog, Auth, CurrentAuth, CurrentManager, CurrentCompany) {
+  function NotificationIndexController ($log, $state, $mdSidenav, $mdDialog, Auth, CurrentAuth, CurrentManager, CurrentCompany, Company) {
 
     var vm = this;
     vm.data = $state.current.data;
@@ -17,7 +17,8 @@
     }
 
     if (CurrentManager.companies.length > 0) {
-      vm.company = true;
+      vm.hasCompany = true;
+      vm.company = CurrentCompany;
     }
 
     if (CurrentCompany && CurrentCompany.teams.length > 0) {
@@ -45,6 +46,7 @@
         .ok('Got it!')
         .targetEvent(ev)
     );
+
   };
 
   }
