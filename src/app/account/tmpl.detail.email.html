@@ -33,7 +33,7 @@
                 <input ng-model="AccountDetailCtrl.me.password.email" disabled>
               </md-input-container>
             </div>
-            <md-button class="md-secondary md-icon-button md-raised md-primary" ng-click="AccountDetailCtrl.saveManager('li.account')">
+            <md-button class="md-secondary md-icon-button md-raised md-primary" ng-click="AccountDetailCtrl.saveManager('li.account', 'li.account.phone')">
               <md-icon>check</md-icon>
             </md-button>
           </div>
@@ -42,7 +42,7 @@
       </md-list>
     </md-card>
 
-    <md-card class="margin-top-20">
+    <md-card class="margin-top-20" ng-hide="$state.params.action == 'create'">
       <md-list class="pad-0">
         <md-list-item ng-click="$state.go('li.account.phone')" class="md-long-text">
           <div flex="35">
@@ -87,4 +87,4 @@
   </div><!-- flex -->
 </div><!-- row -->
 
-<md-divider class="margin-top-80"></md-divider>
+<md-divider ng-hide="$state.params.action == 'create'" class="margin-top-80"></md-divider>

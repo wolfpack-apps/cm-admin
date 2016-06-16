@@ -25,7 +25,7 @@
           <md-divider></md-divider>
         </md-list-item>
       </md-list>
-    </md-card>    
+    </md-card>
 
     <md-card class="margin-top-20" ng-hide="$state.params.action == 'create'">
       <md-list style="padding: 0px">
@@ -83,3 +83,5 @@
 
   </div><!-- flex -->
 </div><!-- row -->
+
+<md-divider ng-if="$state.params.action !=== 'create'" class="margin-top-80"></md-divider>

@@ -33,11 +33,15 @@
      * Functions
      */
 
-    vm.saveManager = function (route) {
+    vm.saveManager = function (route, createRoute) {
       vm.manager
         .$save()
         .then(function (ref) {
-          $state.go(route, {}, {reload: true})
+          if ($state.params.action === 'create') {
+            $state.go(createRoute, {}, {reload: true})
+          } else {
+            $state.go(route, {}, {reload: true})
+          }
         });
     }
 

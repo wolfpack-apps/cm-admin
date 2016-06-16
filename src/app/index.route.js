@@ -91,7 +91,7 @@
         }
       })
       .state('li.account', {
-        url: '/account',
+        url: '/account?action',
         templateUrl: 'app/account/tmpl.detail.html',
         controller: 'AccountDetailController',
         controllerAs: 'AccountDetailCtrl',
@@ -136,11 +136,13 @@
         }
       })
       .state('li.account.company', {
-        url: '/:id?action',
-        template: '<ui-view />',
+        url: '/company/:id?action',
+        templateUrl: 'app/companies/tmpl.detail.html',
         controller: 'CompanyDetailController',
         controllerAs: 'CompanyDetailCtrl',
-        abstract: true
+        data: {
+          titl: 'Your company'
+        }
       })
       .state('li.account.company.name', {
         url: '/name',
