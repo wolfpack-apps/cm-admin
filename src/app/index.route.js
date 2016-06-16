@@ -342,6 +342,15 @@
           title: 'Player Detail - Edit: Player birthday'
         }
       })
+      .state('li.players.detail.gender', {
+        url: '/gender',
+        templateUrl: 'app/players/tmpl.detail.gender.html',
+        controller: 'PlayerDetailController',
+        controllerAs: 'PlayerDetailCtrl',
+        data: {
+          title: 'Player Detail - Edit: Player gender'
+        }
+      })
       .state('li.coaches', {
         url: '/coaches',
         templateUrl: 'app/coaches/tmpl.index.html',
