@@ -91,7 +91,7 @@
         }
       })
       .state('li.account', {
-        url: '/account',
+        url: '/account?action&toast',
         templateUrl: 'app/account/tmpl.detail.html',
         controller: 'AccountDetailController',
         controllerAs: 'AccountDetailCtrl',
@@ -135,12 +135,23 @@
           title: 'Your Account - Edit: Address'
         }
       })
+      .state('li.account.companies', {
+        url: '/companies',
+        templateUrl: 'app/companies/tmpl.index.html',
+        controller: 'CompanyIndexController',
+        controllerAs: 'CompanyIndexCtrl',
+        data: {
+          title: 'Your companies'
+        }
+      })
       .state('li.account.company', {
-        url: '/:id?action',
-        template: '<ui-view />',
+        url: '/company/:id',
+        templateUrl: 'app/companies/tmpl.detail.html',
         controller: 'CompanyDetailController',
         controllerAs: 'CompanyDetailCtrl',
-        abstract: true
+        data: {
+          title: 'Your company'
+        }
       })
       .state('li.account.company.name', {
         url: '/name',
