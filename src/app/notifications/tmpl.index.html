@@ -27,7 +27,7 @@
               </div>
               <md-divider></md-divider>
             </md-list-item>
-            <md-list-item ng-if="NotificationIndexCtrl.hasCompany" class="md-2-line" ng-click="$state.go('li.account.companies')">
+            <md-list-item ng-if="NotificationIndexCtrl.hasCompany" class="md-2-line" ng-click="$state.go('li.account.company.name', {id: NotificationIndexCtrl.company.$id, action: 'create' })">
               <md-checkbox ng-model="NotificationIndexCtrl.hasCompany" aria-label="Has Company?"></md-checkbox>
               <div class="md-list-item-text" layout="column">
                 <h3>Add a company to your account</h3>

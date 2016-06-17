@@ -91,7 +91,7 @@
         }
       })
       .state('li.account', {
-        url: '/account?action',
+        url: '/account?action&toast',
         templateUrl: 'app/account/tmpl.detail.html',
         controller: 'AccountDetailController',
         controllerAs: 'AccountDetailCtrl',
