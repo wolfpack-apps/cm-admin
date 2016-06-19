@@ -32,73 +32,14 @@
         </md-card>
 
         <md-card class="margin-top-20">
-          <md-list style="padding: 0px;">
-            <md-list-item class="md-2-line" ng-click="$state.go('li.payments.detail', {id: 'hd2o0d29'})">
-              <img ng-src="http://www.gravatar.com/avatar/4653db1889662ffb0974ada54bcaf25c" class="md-avatar" alt="{{item.who}}" />
+          <md-list class="pad-0">
+            <md-list-item class="md-2-line" ng-repeat="payment in PaymentIndexCtrl.payments" ng-click="$state.go('li.payments.detail', {id: payment.$id})">
+              <!-- <img ng-src="http://www.gravatar.com/avatar/4653db1889662ffb0974ada54bcaf25c" class="md-avatar" alt="{{item.who}}" /> -->
               <div class="md-list-item-text">
-                <h3><strong>Jordan Skole</strong> just paid <strong>$403.00</strong></h3>
-                <p>to U-15 Vardar North for Justin Lupenec on 03/25/16</p>
-                <md-icon class="md-secondary">
-                  credit_card
-                  <md-tooltip md-direction="top">
-                    via credit card
-                  </md-tooltip>
-                </md-icon>
-              </div>
-              <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="md-2-line" ng-click="$state.go('li.payments.detail', {id: 'hd2o0d29'})">
-              <img ng-src="http://www.gravatar.com/avatar/893bf8ca944560c5dca03e0fbb5f279d" class="md-avatar" alt="{{item.who}}" />
-              <div class="md-list-item-text">
-                <h3><strong>Heather Skole</strong> just paid <strong>$1,200.00</strong></h3>
-                <p>to Vardar South on 03/24/16 at 07:45 PM</p>
-                <md-icon class="md-secondary">
-                  account_balance
-                  <md-tooltip md-direction="top">
-                    via ACH transfer
-                  </md-tooltip>
-                </md-icon>
-              </div>
-              <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="md-2-line" ng-click="$state.go('li.payments.detail', {id: 'hd2o0d29'})">
-              <img ng-src="/assets/images/morris.jpg" class="md-avatar" alt="{{item.who}}" />
-              <div class="md-list-item-text">
-                <h3><strong>You</strong> just paid <strong>$5,100.00</strong> to <strong>Bob Read</strong></h3>
-                <p>for Vardar Arizona U-18 Boys Spring</p>
-                <md-icon class="md-secondary">
-                  mail
-                  <md-tooltip md-direction="top">
-                    via check
-                  </md-tooltip>
-                </md-icon>
-              </div>
-              <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="md-2-line" ng-click="$state.go('li.payments.detail', {id: 'hd2o0d29'})">
-              <img ng-src="http://www.gravatar.com/avatar/4653db1889662ffb0974ada54bcaf25c" class="md-avatar" alt="{{item.who}}" />
-              <div class="md-list-item-text">
-                <h3><strong>Jordan Skole</strong> just paid <strong>$403.00</strong></h3>
-                <p>to Vardar Florida on 03/25/16 at 11:45 PM</p>
+                <h3><strong>{{ payment.player.first_name + ' ' + payment.player.last_name }}</strong> just paid <strong>${{ payment.amount }}</strong></h3>
+                <p>to {{ payment.team.name }} for {{ payment.player.first_name + ' ' + payment.player.last_name }} on {{ payment.created_on | date:'shortDate' }}</p>
                 <md-icon class="md-secondary">
                   book
-                  <md-tooltip md-direction="top">
-                    via manual entry
-                  </md-tooltip>
-                </md-icon>
-              </div>
-              <md-divider></md-divider>
-            </md-list-item>
-            <md-list-item class="md-2-line" ng-click="$state.go('li.payments.detail', {id: 'hd2o0d29'})">
-              <img ng-src="/assets/images/justin.jpg" class="md-avatar" alt="{{item.who}}" />
-              <div class="md-list-item-text">
-                <h3><strong>Justin Lupenec</strong> just paid <strong>$403.00</strong></h3>
-                <p>to Vardar South on 03/24/16 at 04:45 PM</p>
-                <md-icon class="md-secondary">
-                  monetization_on
-                  <md-tooltip md-direction="top">
-                    via ACH transfer
-                  </md-tooltip>
                 </md-icon>
               </div>
               <md-divider></md-divider>

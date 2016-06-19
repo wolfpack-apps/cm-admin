@@ -6,12 +6,15 @@
     .factory('Payment', Payment);
 
   /** @ngInject */
-  function Payment (FIREBASE_URL, $firebaseAuth, $firebaseObject, $firebaseArray, Auth) {
+  function Payment ($q, FIREBASE_URL, $firebaseAuth, $firebaseObject, $firebaseArray, Auth, Team, Player) {
 
     var itemsRef = new Firebase(FIREBASE_URL + '/payments');
     var Payment = $firebaseObject.$extend({
       $$defaults: {
         // default goes here
+      },
+      $$updated: {
+        updated: new Date()
       }
     });
     var Payments = $firebaseArray.$extend({
@@ -58,9 +61,66 @@
         return Payments(query);
       },
 
+      // return Array
       all: function () {
         return Payments(itemsRef);
+      },
+
+      // return Array
+      // accept an array of payments like would be returned
+      // above
+      enrichPayments: function (payments) {
+        return $q(function (resolve, reject) {
+
+          let finished = _.after(payments.length * 2, function () {
+            // resolve enrichPayments
+            // after forEach payments and forEach teams has finished
+            resolve(payments);
+          });
+
+          _.forEach(payments, function (payment) {
+            Player
+              .get(payment.player_id)
+              .$loaded()
+              .then(function (playerData) {
+                payment.player = playerData;
+                finished();
+                return payment;
+              })
+              .catch(function (error) {
+                reject(error);
+              });
+          });
+
+          _.forEach(payments, function (payment) {
+            Team
+              .get(payment.team_id)
+              .$loaded()
+              .then(function (teamData) {
+                payment.team = teamData;
+                finished();
+                return payment;
+              })
+              .catch(function (error) {
+                reject(error);
+              });
+          });
+
+        });
+
       }
+
+      // return Array
+      // enrichPayments = function (payments) {
+      //   _.forEach(payments, functon (payment) {
+      //     Player
+      //       .get(payment.player_id)
+      //       .$loaded()
+      //       .then(function () {
+      //         payment.
+      //       })
+      //   })
+      // }
     }
 
 

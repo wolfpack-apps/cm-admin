@@ -6,11 +6,18 @@
     .controller('PaymentIndexController', PaymentIndexController);
 
   /** @ngInject */
-  function PaymentIndexController ($log, $state, $mdSidenav, $mdMedia, $mdDialog, Auth, CurrentAuth, CurrentManager, CurrentCompany) {
+  function PaymentIndexController ($log, $state, $mdSidenav, $mdMedia, $mdDialog, Auth, CurrentAuth, CurrentManager, CurrentCompany, Payment, Player, Team) {
 
     var vm = this;
     vm.data = $state.current.data;
     vm.company = CurrentCompany;
+
+    vm.payments = Payment.getByCompany(CurrentCompany.$id);
+    vm.payments.$watch(function (event) {
+      Payment.enrichPayments(vm.payments).then(function () {
+        $log.log(vm.payments)
+      });
+    });
 
     vm.recordPayment = function (ev) {
 

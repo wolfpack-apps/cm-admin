@@ -51,7 +51,8 @@
         method: 'manual_payment',
         payee_type: 'player',
         payee_id: vm.payment.player_id,
-        company_id: CurrentCompany.$id
+        company_id: CurrentCompany.$id,
+        created_on: moment().format()
       });
 
 
