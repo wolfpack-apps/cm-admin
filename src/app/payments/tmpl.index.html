@@ -14,7 +14,24 @@
         </p>
       </div>
       <div flex>
+
         <md-card>
+          <md-list class="pad-0">
+
+            <md-list-item ng-if="true" class="md-2-line" ng-click="PaymentIndexCtrl.recordPayment()">
+              <md-icon class="md-primary">book</md-icon>
+              <div class="md-list-item-text">
+                <h3>
+                  <strong>Record a manual payment.</strong>
+                </h3>
+                <md-icon class="md-secondary">chevron_right</md-icon>
+              </div>
+            </md-list-item>
+
+          </md-list>
+        </md-card>
+
+        <md-card class="margin-top-20">
           <md-list style="padding: 0px;">
             <md-list-item class="md-2-line" ng-click="$state.go('li.payments.detail', {id: 'hd2o0d29'})">
               <img ng-src="http://www.gravatar.com/avatar/4653db1889662ffb0974ada54bcaf25c" class="md-avatar" alt="{{item.who}}" />

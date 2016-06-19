@@ -3,10 +3,10 @@
 
   angular
     .module('cmAdmin')
-    .factory('Coach', Coach);
+    .factory('Payment', Payment);
 
   /** @ngInject */
-  function Coach (FIREBASE_URL, $firebaseAuth, $firebaseObject, $firebaseArray, Auth) {
+  function Payment (FIREBASE_URL, $firebaseAuth, $firebaseObject, $firebaseArray, Auth) {
 
     var itemsRef = new Firebase(FIREBASE_URL + '/payments');
     var Payment = $firebaseObject.$extend({
