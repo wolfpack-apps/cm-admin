@@ -12,6 +12,7 @@
     vm.me = CurrentAuth;
     if (CurrentCompany) {
       vm.hasCompany = true;
+      vm.company = CurrentCompany;
     } else {
       vm.hasCompany = false;
     }
