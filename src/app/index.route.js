@@ -202,7 +202,7 @@
         url: '/payments',
         templateUrl: 'app/payments/tmpl.index.html',
         controller: 'PaymentIndexController',
-        controllerAs: 'PaymentsCtrl',
+        controllerAs: 'PaymentIndexCtrl',
         data: {
           title: 'Your Payments'
         }
