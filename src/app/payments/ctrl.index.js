@@ -15,7 +15,7 @@
     vm.payments = Payment.getByCompany(CurrentCompany.$id);
     vm.payments.$watch(function (event) {
       Payment.enrichPayments(vm.payments).then(function () {
-        $log.log(vm.payments)
+        // $log.log(vm.payments)
       });
     });
 

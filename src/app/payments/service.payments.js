@@ -12,9 +12,6 @@
     var Payment = $firebaseObject.$extend({
       $$defaults: {
         // default goes here
-      },
-      $$updated: {
-        updated: new Date()
       }
     });
     var Payments = $firebaseArray.$extend({
@@ -108,6 +105,25 @@
 
         });
 
+      },
+
+      enrichPayment: function (payment) {
+        return $q(function (resolve, reject) {
+          Player
+            .get(payment.player_id)
+            .$loaded()
+            .then(function (playerData) {
+              payment.player = playerData;
+              return payment;
+            })
+            .then(function(payment) {
+              return Team.get(payment.team_id).$loaded();
+            })
+            .then(function(teamData) {
+              payment.team = teamData;
+              resolve(payment);
+            });
+        });
       }
 
       // return Array
