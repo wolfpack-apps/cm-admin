@@ -69,7 +69,7 @@
       enrichPayments: function (payments) {
         return $q(function (resolve, reject) {
 
-          let finished = _.after(payments.length * 2, function () {
+          var finished = _.after(payments.length * 2, function () {
             // resolve enrichPayments
             // after forEach payments and forEach teams has finished
             resolve(payments);

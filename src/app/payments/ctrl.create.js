@@ -47,7 +47,7 @@
     };
 
     vm.recordPayment = function () {
-      let paymentToSave = _.merge(vm.payment, {
+      var paymentToSave = _.merge(vm.payment, {
         method: 'manual_payment',
         payee_type: 'player',
         payee_id: vm.payment.player_id,
